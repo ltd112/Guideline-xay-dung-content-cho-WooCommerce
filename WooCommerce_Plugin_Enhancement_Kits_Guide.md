@@ -2,90 +2,80 @@
 
 > Đây là các điểm cần lưu ý chính khi sử dụng plugin. Tài liệu hướng dẫn sử dụng chi tiết và đầy đủ có tại: [Google Docs - WC Enhancement Kit Guide](https://docs.google.com/document/d/1nW-ad7lRfS3UATdKyQ0E3tejxrnFDEB6zzRJFmpT4Uw/edit?usp=sharing)
 
-## ⚡ Quick Start
+## Quick Start
 
-1.  **Product Tabs**: Thêm các tab như "Chính sách đổi trả", "Hướng dẫn sử dụng" cho sản phẩm.
-2.  **Variation Display**: Tối ưu cách khách hàng chọn size/màu sắc.
-3.  **Collection**: Tạo các bộ sưu tập sản phẩm
-4.  **Product Advanced Fields**: Thêm các trường nhập liệu cho khách hàng
-5.  **WebP Conversion**: Tự động tối ưu và chuyển đổi ảnh sang WebP khi upload.
+1.  **Product Tabs**: Module quản lý tab thông tin bổ sung.
+2.  **Variation Display**: Tối ưu hóa giao diện chọn thuộc tính.
+3.  **Collection**: Công cụ tạo danh mục sản phẩm động.
+4.  **Product Advanced Fields**: Thêm các trường dữ liệu tùy chỉnh.
+5.  **WebP Conversion**: Tự động tối ưu hóa định dạng ảnh.
 
 ---
 
 ## 1. Cấu hình Chung & Cài đặt
 - **Truy cập**: Dashboard -> **WC Enhancement Kit**.
 - **Chọn Template**: Đảm bảo chọn đúng giao diện mẫu tương ứng với theme đang dùng (**Flatsome** hoặc **WoodMart**).
-
 ---
 
 ## 2. Giao diện Trang Sản phẩm (Single Product UI)
-Chỉ áp dụng mạnh mẽ cho theme **Flatsome**. Woodmart nên tắt module này.
+Module tối ưu hiển thị, chỉ khả dụng cho theme **Flatsome**.
 
-- **Nút Buy Now (Mua ngay)**:
-    - Cho phép khách hàng đi thẳng đến trang Checkout/Cart.
-    - **Position**: Có thể đặt trước hoặc sau nút Add to Cart.
-    - **Animation**: Khuyên dùng `Scale` với giá trị `1.05` để tạo hiệu ứng thu hút.
-- **Giá sản phẩm (Product Price)**:
-    - Ẩn khoảng giá (Price Range) và chỉ hiển thị giá của biến thể đã chọn.
-- **Nội dung bổ sung (Extra Content)**:
-    - Chèn thêm text hoặc ảnh vào bất kỳ vị trí nào trên trang sản phẩm thông qua các Hook.
-
+- **Buy Now Button**:
+    - **Position**: Hỗ trợ thay đổi vị trí nút (Trước hoặc Sau nút Add to Cart).
+    - **Animation**: Cấu hình loại hiệu ứng (Animation Type) và tỷ lệ thu phóng (Scale).
+- **Product Price**:
+    - **Price Range**: Chức năng ẩn khoảng giá (Min - Max price) của sản phẩm có biến thể.
+    - **Variation Price**: Hiển thị giá cụ thể của biến thể đã chọn.
+- **Extra Content**:
+    - **Hooks**: Hỗ trợ chèn nội dung (Text, Image, HTML) vào các vị trí Hook trên trang sản phẩm.
 ---
 
 ## 3. Hiển thị Biến thể (Variation Display)
-Giúp khách hàng chọn thuộc tính sản phẩm dễ dàng hơn.
+Module quản lý và tối ưu hóa trình chọn thuộc tính sản phẩm.
 
-- **Smart Default Variant**: Tự động chọn biến thể đầu tiên khi khách vào trang.
-- **Force Form Data Loading**: Khuyên dùng để tăng tốc độ phản hồi khi khách click chọn size/màu.
-- **Hide Reset Link**: Ẩn chữ "Clear" dư thừa để giao diện sạch sẽ hơn.
-- **Selected Swatch Style**: Chỉnh màu nền và màu chữ cho option đang được chọn để làm nổi bật.
+- **Smart Default Variant**: Tự động chọn biến thể đầu tiên khi tải trang.
+- **Force Form Data Loading**: Kích hoạt cơ chế tải trước dữ liệu để tăng tốc độ phản hồi khi khách hàng chọn option.
+- **Hide Reset Link**: Ẩn liên kết "Clear/Xóa" mặc định của WooCommerce.
+- **Selected Swatch Style**: Tùy chỉnh màu sắc (Color/Background) cho trạng thái đang được chọn (Active state) của Swatch.
 
 ---
 
 ## 4. Tối ưu ảnh (WebP Conversion)
-Module này giúp website tải nhanh hơn bằng cách giảm dung lượng ảnh mà không làm giảm chất lượng.
+Module chuyển đổi định dạng ảnh sang WebP để tối ưu tốc độ tải trang.
 
-- **Tự động hóa**: Hệ thống tự động convert mọi ảnh tải lên sang định dạng `.webp`.
-- **Bulk Migration (Chuyển đổi hàng loạt)**:
-    - Sử dụng khi site có nhiều ảnh cũ chưa được tối ưu.
-    - Truy cập card **WebP Conversion** -> Nhấn **Start bulk migration**.
-    - Hệ thống sẽ chạy ngầm để xử lý toàn bộ thư viện Media.
+- **Auto Conversion**: Hệ thống tự động chuyển đổi mọi ảnh upload sang `.webp`.
+- **Bulk Migration**:
+    - Chức năng quét và xử lý hàng loạt ảnh cũ chưa được tối ưu.
+    - Quy trình chạy ngầm (Background processing) thông qua bảng điều khiển WebP Conversion.
 
 ---
 
 ## 5. Tab Sản phẩm (Product Tabs)
+Module mở rộng thông tin sản phẩm thông qua các tab tùy chỉnh.
 
-- **Công dụng**: Thêm các thông tin bổ sung mà mặc định WooCommerce không có.
-- **Cấu hình**:
-    - **Apply for**: Có thể chọn áp dụng cho toàn bộ site, hoặc chỉ một Category/Brand/Sản phẩm nhất định.
-    - **Type**: Chọn `Custom` để tự viết nội dung hoặc chọn các tab mặc định.
+- **Apply For**: Cấu hình phạm vi hiển thị (Toàn trang, Danh mục, Thương hiệu hoặc Sản phẩm cụ thể).
+- **Tab Type**: Hỗ trợ loại `Default` (có sẵn) hoặc `Custom` (tự định nghĩa nội dung).
 
 ---
 
 ## 6. Bộ sưu tập (Collection)
-Tính năng tạo trang danh mục sản phẩm nâng cao, tự động lọc theo điều kiện.
+Tính năng tạo trang danh sách sản phẩm nâng cao với quy tắc lọc động.
 
-- **Slug**: Mặc định là `/collections/`.
-- **Tạo Collection**:
-    - **Thumbnail**: Ảnh đại diện trong danh sách.
-    - **Banner**: Ảnh hiển thị phía trên trang collection.
-    - **Bộ lọc (Filter)**: Lọc sản phẩm theo tiêu đề, giá, ngày đăng hoặc thuộc tính.
-- **Sắp xếp (Manual Sort)**: Bạn có thể kéo thả để sắp xếp thứ tự sản phẩm thủ công.
+- **URL Slug**: Cấu hình đường dẫn tĩnh (mặc định: `/collections/`).
+- **Collection Fields**:
+    - **Media**: Thiết lập ảnh Thumbnail và Banner cho từng bộ sưu tập.
+    - **Filters**: Thiết lập tiêu chí lọc sản phẩm (Price, Date, Attribute, Title).
+- **Product Sorting**: Hỗ trợ sắp xếp thủ công (Manual drag-drop) thứ tự sản phẩm.
 
 ---
 
-## 7. Công cụ Admin & Bảo mật
+## 7. Công cụ Admin & Nhập liệu
 - **Admin Tool**:
-    - Thêm bộ lọc Tag trong trang danh sách sản phẩm.
-    - **SEO Quick View**: Xem nhanh thông tin SEO.
+    - **Product Tags Filter**: Thêm bộ lọc thẻ (Tags) vào trang danh sách sản phẩm.
+    - **SEO Quick View**: Tích hợp xem nhanh dữ liệu SEO.
 - **Product Importer**:
-    - Hỗ trợ nhập sản phẩm từ Shopbase hoặc file CSV của WooCommerce.
-    - Có cơ chế **Auto-recovery** nếu quá trình nhập bị gián đoạn.
+    - Hỗ trợ định dạng Shopbase và WooCommerce CSV.
+    - **Auto-recovery**: Cơ chế tự động khôi phục quy trình nếu bị gián đoạn.
 
 ---
-
-## 8. Theo dõi Chuyển đổi (Ads Pixel Manager)
-Quản lý các mã tracking cho quảng cáo tại một nơi duy nhất.
-- Hỗ trợ: **Google Ads**, **Facebook Pixel (CAPI)**, **Bing Ads**.
-- **Lưu ý**: Sau khi thay đổi cấu hình, **BẮT BUỘC** phải xóa cache (WP Rocket) để mã mới có hiệu lực.
 

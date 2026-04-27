@@ -1,29 +1,23 @@
-# WooCommerce Content & Site Configuration Guideline
+# WooCommerce Content & Technical Configuration Guideline
 
-Đây là bộ tài liệu hướng dẫn dành cho việc xây dựng nội dung và cấu hình website WooCommerce sử dụng theme **Flatsome** và **Woodmart**.
+Tài liệu hướng dẫn kỹ thuật dành cho việc xây dựng nội dung và cấu hình hệ thống WooCommerce (Theme Flatsome & Woodmart).
 
-## 📑 Danh mục Tài liệu
+## Danh mục Tài liệu
 
-### 1. [Quy chuẩn Media & Content](Guideline_Content_WooCommerce.md)
-*   Quy chuẩn kích thước Logo, Banner (PC & Mobile).
-*   Định dạng ảnh bắt buộc (WebP) và hướng dẫn chuyển đổi.
+### 1. [Quy chuẩn Kỹ thuật Media & Content](Guideline_Content_WooCommerce.md)
+*   Thông số kích thước Logo, Banner (Desktop & Mobile).
+*   Quy định định dạng ảnh (WebP) và cơ chế chuyển đổi.
 
-### 2. [Hướng dẫn Theme Flatsome](Flatsome_Usage_Guide.md)
-*   Cấu hình Font chữ & Màu sắc thương hiệu.
-*   Cách sử dụng UX Builder để tạo Landing Page.
-*   Cấu hình Header & Footer cơ bản.
+### 2. [Hướng dẫn Kỹ thuật Theme Flatsome](Flatsome_Usage_Guide.md)
+*   Cấu hình hệ thống và trình dựng layout UX Builder.
+*   Quản lý Header/Footer và Global Blocks.
 
-### 3. [Hướng dẫn Theme Woodmart](Woodmart_Usage_Guide.md)
-*   Cấu hình Font chữ & Màu sắc trong Theme Settings.
-*   Sử dụng Elementor & Woodmart Builder.
-*   Cấu hình Header Builder và các tính năng nâng cao.
+### 3. [Hướng dẫn Kỹ thuật Theme Woodmart](Woodmart_Usage_Guide.md)
+*   Cấu hình Theme Settings và trình dựng layout Elementor.
+*   Quản lý Header Builder và hệ thống Layout động.
 
 ### 4. [Hướng dẫn Plugin Bổ trợ](WooCommerce_Plugin_Enhancement_Kits_Guide.md)
-*   Cách sử dụng WC Enhancement Kit (Nút Buy Now, Biến thể, Tabs...).
-*   Cấu hình bộ lọc, import sản phẩm và các công cụ Admin.
+*   Cấu hình module WC Enhancement Kit (Buy Now, Variation, Collections...).
 
 ---
-**LƯU Ý QUAN TRỌNG:** 
-trên đây là những gợi ý về quy chuẩn về kích thước và định dạng ảnh để đảm bảo tốc độ tải trang (Page Speed) và trải nghiệm người dùng tốt nhất.
-
-Trên thực tế, bạn có thể điều chỉnh các thông số cho phù hợp.
+**LƯU Ý:** Các thông số kỹ thuật được thiết lập nhằm tối ưu hóa hiệu suất (Page Speed) và chỉ số Core Web Vitals (LCP, CLS). Có thể điều chỉnh linh hoạt dựa trên yêu cầu cụ thể của từng dự án.

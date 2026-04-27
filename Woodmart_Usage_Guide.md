@@ -1,56 +1,53 @@
 # Hướng dẫn Sử dụng Theme Woodmart
 
-## 1. Cấu hình Font chữ & Màu sắc
-Woodmart quản lý tất cả cấu hình trong bảng điều khiển riêng.
+## 1. Cấu hình Hệ thống (Theme Settings)
+Quản lý cấu hình tập trung thông qua bảng điều khiển Woodmart.
 
 - **Truy cập**: Dashboard -> **Woodmart** -> **Theme Settings**.
-- **Màu sắc (Styles and Colors)**:
-    - Vào **Styles and Colors** -> **Primary color**.
-    - Thiết lập màu chủ đạo.
-- **Font chữ (Typography)**:
-    - Vào **Typography**.
-    - Tại đây bạn có thể thiết lập font cho từng thành phần (Text, Headlines, Navigation).
-    - Hỗ trợ Google Fonts mặc định.
+- **Colors (Styles and Colors)**:
+    - **Primary color**: Thiết lập mã màu chủ đạo của website.
+- **Typography**:
+    - Thiết lập Font Family chi tiết cho từng thành phần (Text, Headlines, Navigation).
+    - Hỗ trợ tích hợp trực tiếp Google Fonts.
+    - **Yêu cầu kỹ thuật**: Đảm bảo độ tương phản (Contrast) đạt tiêu chuẩn **WCAG AA** (tối thiểu 4.5:1) giữa màu chữ và nền để đảm bảo khả năng đọc.
 
 ---
 
-## 2. Cách tạo Landing Page với Elementor & Woodmart
-Woodmart sử dụng Elementor làm trình dựng trang chính. Để tối ưu hóa hiệu suất và tránh lỗi **LCP (Largest Contentful Paint)**, cần tuân thủ quy tắc xây dựng sau:
+## 2. Xây dựng Layout (Elementor & Woodmart Builder)
+Sử dụng Elementor phối hợp với các Widget đặc thù của Woodmart.
 
-- **Xây dựng khối kiến trúc (Container)**:
-    - Mọi phần của trang phải bắt đầu bằng một **Container**.
-    - **Bắt buộc**: Luôn thiết lập **Min Height (Chiều cao tối thiểu)** cho các Container trên cả Desktop và Mobile.   Việc này giúp giữ chỗ cho nội dung, tránh hiện tượng nhảy khung (Layout Shift) và giúp trình duyệt xác định vùng LCP sớm hơn.
-- **Thành phần bên trong Container**:
-    - **Banner**: Thêm widget **Image** (hoặc Image or SVG) vào trong Container để làm banner.
-    - **Sản phẩm (Collections)**: Thêm widget **Product (grid or carousel)** để hiển thị sản phẩm thuộc các bộ sưu tập (Collection) mong muốn.
-- **Tính năng Layouts**:
-    - Sử dụng **Woodmart -> Layouts** để tạo các mẫu Template cho Single Product, Shop page, Checkout page... giúp đồng bộ giao diện toàn site.
+- **Kiến trúc Container**:
+    - **Yêu cầu kỹ thuật**: Mọi khối nội dung phải bắt đầu bằng một **Container**.
+    - **Min Height**: Bắt buộc thiết lập chiều cao tối thiểu cho Container trên cả Desktop và Mobile để tối ưu chỉ số LCP.
+- **Widget tiêu chuẩn**:
+    - **Banner**: Sử dụng widget **Image** hoặc **Image or SVG** đặt trong Container.
+    - **Products**: Sử dụng widget **Product (grid/carousel)** để nhúng sản phẩm từ các Collection.
+- **Hệ thống Layouts**:
+    - Sử dụng **Woodmart -> Layouts** để xây dựng các Template động cho Single Product, Shop, Cart, Checkout.
 
 ---
 
-## 3. Cấu hình Header Builder
-Woodmart có trình dựng Header riêng biệt rất trực quan.
-- Truy cập: **Woodmart** -> **Header Builder**.
-- Bạn có thể tạo nhiều Header khác nhau và gán cho từng trang cụ thể.
-- Hỗ trợ kéo thả các element như Logo, Search, Account, Cart.
+## 3. Quản lý Header (Header Builder)
+- **Truy cập**: Dashboard -> **Woodmart** -> **Header Builder**.
+- **Tính năng**: 
+    - Hỗ trợ kéo thả Element (Logo, Search, Account, Cart).
+    - Khả năng tạo nhiều Header và gán theo điều kiện cho từng trang.
 
 ---
 
 ## 4. Cấu hình Plugin Bổ trợ (WC Enhancement Kit)
-Đối với theme Woodmart, cần lưu ý các cấu hình sau trong plugin:
+Các thiết lập tối ưu riêng cho theme Woodmart:
 
-- **Bật Theme Config**: Dashboard -> WC Enhancement Kit -> Dashboard -> Bật Woodmart config.
-- **Tắt các module dư thừa**: Tắt Single Product, Pagination và  vì Woodmart đã hỗ trợ rất tốt các phần này.
+- **Theme Config**: Bật tùy chọn `Woodmart config` trong dashboard của plugin.
+- **Module Optimization**: Khuyên dùng trạng thái Tắt (Disable) cho module Single Product và Pagination của plugin để tránh xung đột với tính năng gốc của Woodmart.
 
-### Hiển thị Biến thể (Variation Display)
-Cấu hình để trang sản phẩm chuyên nghiệp hơn:
-1. **Enable URL Rewrite**: Tạo link riêng cho từng biến thể.
-2. **Force Form Data Loading**: Tránh lỗi load chậm khi chọn thuộc tính.
-3. **Smart Default Variant**: Tự động chọn biến thể đầu tiên.
-4. **Style Swatches**: 
-   - Tùy chỉnh màu sắc khi option được chọn tại: **Selected Swatch Background** & **Selected Swatch Text Color**.
+### Variation Display (Hiển thị Biến thể)
+- **Enable URL Rewrite**: Tạo Permalinks riêng cho từng biến thể sản phẩm.
+- **Force Form Data Loading**: Kích hoạt cơ chế tải trước dữ liệu form thuộc tính.
+- **Smart Default Variant**: Tự động kích hoạt biến thể đầu tiên khi tải trang.
+- **Swatch Styling**: Cấu hình CSS (Background/Text Color) cho trạng thái Selected tại phần Swatch Settings.
 
 ---
 
 ## 5. Tài liệu tham khảo
-- Trang chủ tài liệu: [xtemos.com/documentation/woodmart/](https://xtemos.com/documentation/woodmart/)
+- [Woodmart Documentation](https://xtemos.com/documentation/woodmart/)

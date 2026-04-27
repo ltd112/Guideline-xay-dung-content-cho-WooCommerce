@@ -1,44 +1,41 @@
-# Hướng dẫn Sử dụng Theme Flatsome
+# Hướng dẫn Kỹ thuật Theme Flatsome
 
-## 1. Cấu hình Font chữ & Màu sắc
-Tất cả các thay đổi về giao diện được thực hiện trong **Customizer**.
+## 1. Cấu hình Hệ thống (Customizer)
+Quản lý giao diện tập trung thông qua WordPress Customizer.
 
 - **Truy cập**: Dashboard -> **Appearance** -> **Customize**.
-- **Màu sắc (Colors)**:
-    - Vào **Style** -> **Colors**.
-    - Thiết lập **Primary Color**: Màu chủ đạo.
-    - Thiết lập **Secondary Color**: Màu nhấn (thường dùng cho nút, icon).
-- **Font chữ (Typography)**:
-    - Vào **Style** -> **Typography**.
-    - Chọn font cho **Headlines** (Tiêu đề) và **Base** (Nội dung văn bản).
-    - Khuyên dùng: *Inter*, *Roboto* hoặc *Montserrat*.
+- **Colors (Màu sắc)**:
+    - **Primary Color**: Thiết lập mã màu chủ đạo cho toàn bộ website.
+    - **Secondary Color**: Thiết lập mã màu bổ trợ cho các thành phần tương tác (Button, Icon).
+- **Typography (Font chữ)**:
+    - **Headlines**: Cấu hình Font Family cho các thẻ tiêu đề (H1-H6).
+    - **Base**: Cấu hình Font Family cho nội dung văn bản mặc định.
+    - **Yêu cầu kỹ thuật**: Đảm bảo độ tương phản (Contrast) đạt tiêu chuẩn **WCAG AA** (tối thiểu 4.5:1) giữa màu chữ và nền để đảm bảo khả năng đọc.
 
 ---
 
-## 2. Cách tạo Landing Page với UX Builder
-UX Builder cho phép kéo thả các element để tạo trang đẹp mắt.
+## 2. Xây dựng Layout (UX Builder)
+Công cụ thiết kế kéo thả tích hợp sẵn trong Flatsome.
 
-- **Bước 1**: Tạo trang mới (Pages -> Add New) hoặc Edit trang hiện có.
-- **Bước 2**: Nhấn vào nút **Edit with UX Builder**.
-- **Các Element quan trọng**:
-    - **Section**: Container chính, dùng để chia các khối nội dung lớn. **Lưu ý**: Luôn thiết lập **Min Height** cho Section để tránh lỗi LCP (Largest Contentful Paint).
-    - **Row/Column**: Chia cột cho nội dung (vô cùng quan trọng để responsive).
-    - **Slider / Banner**: Tạo các khối banner chuyển động hoặc tĩnh.
-    - **Text / Headline**: Chèn nội dung văn bản.
-    - **Button**: Tạo nút CTA.
-- **Lưu ý Responsive**:
-    - Nhấp vào biểu tượng Mobile/Tablet ở góc trên UX Builder để kiểm tra hiển thị.
-    - Có thể ẩn/hiện các element riêng biệt cho từng thiết bị trong phần **Options -> Visibility**.
+- **Thành phần cốt lõi (Core Elements)**:
+    - **Section**: Container cấp cao nhất. **Yêu cầu kỹ thuật**: Thiết lập **Min Height** để đảm bảo ổn định chỉ số LCP.
+    - **Row/Column**: Hệ thống Grid phân chia bố cục nội dung.
+    - **Slider/Banner**: Module hiển thị hình ảnh động hoặc tĩnh.
+    - **Text/Headline**: Module nhập liệu văn bản.
+    - **Button**: Module tạo điểm tương tác CTA.
+- **Tối ưu Responsive**:
+    - Sử dụng trình xem trước (Mobile/Tablet viewport) để kiểm tra layout.
+    - **Visibility**: Điều chỉnh trạng thái hiển thị (Show/Hide) của element trên từng loại thiết bị.
 
 ---
 
-## 3. Cấu hình Header & Footer
-- **Header**: Dashboard -> **Flatsome** -> **Theme Options** -> **Header**. Kéo thả logo, menu, giỏ hàng vào vị trí mong muốn.
-- **Footer**: Dashboard -> **Flatsome** -> **Theme Options** -> **Footer**.
+## 3. Quản lý Header & Footer
+- **Header Builder**: Dashboard -> **Flatsome** -> **Theme Options** -> **Header**. Hỗ trợ kéo thả các element Logo, Menu, Cart.
+- **Footer Config**: Dashboard -> **Flatsome** -> **Theme Options** -> **Footer**.
 
 ---
 
-## 4. Hướng dẫn sử dụng Block
-Sử dụng **UX Blocks** để tạo các thành phần nội dung có thể tái sử dụng nhiều nơi (ví dụ: chân trang, thông báo khuyến mãi).
-- Truy cập: **UX Blocks** -> Add New.
-- Thiết kế bằng UX Builder và lấy Shortcode dán vào vị trí cần hiển thị.
+## 4. Quản lý Khối nội dung (UX Blocks)
+Công cụ tạo các thành phần nội dung có khả năng tái sử dụng (Global components).
+- **Truy cập**: Dashboard -> **UX Blocks**.
+- **Cơ chế**: Thiết kế bằng UX Builder và nhúng vào vị trí bất kỳ qua Shortcode.
