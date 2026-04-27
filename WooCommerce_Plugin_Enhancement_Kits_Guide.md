@@ -1,5 +1,7 @@
 # Hướng dẫn Sử dụng Plugin WC Enhancement Kit
 
+> Đây là các điểm cần lưu ý chính khi sử dụng plugin. Tài liệu hướng dẫn sử dụng chi tiết và đầy đủ có tại: [Google Docs - WC Enhancement Kit Guide](https://docs.google.com/document/d/1nW-ad7lRfS3UATdKyQ0E3tejxrnFDEB6zzRJFmpT4Uw/edit?usp=sharing)
+
 ## ⚡ Quick Start
 
 1.  **Product Tabs**: Thêm các tab như "Chính sách đổi trả", "Hướng dẫn sử dụng" cho sản phẩm.
@@ -86,3 +88,4 @@ Tính năng tạo trang danh mục sản phẩm nâng cao, tự động lọc th
 Quản lý các mã tracking cho quảng cáo tại một nơi duy nhất.
 - Hỗ trợ: **Google Ads**, **Facebook Pixel (CAPI)**, **Bing Ads**.
 - **Lưu ý**: Sau khi thay đổi cấu hình, **BẮT BUỘC** phải xóa cache (WP Rocket) để mã mới có hiệu lực.
+

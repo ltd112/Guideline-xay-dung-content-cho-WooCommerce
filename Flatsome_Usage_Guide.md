@@ -21,7 +21,7 @@ UX Builder cho phép kéo thả các element để tạo trang đẹp mắt.
 - **Bước 1**: Tạo trang mới (Pages -> Add New) hoặc Edit trang hiện có.
 - **Bước 2**: Nhấn vào nút **Edit with UX Builder**.
 - **Các Element quan trọng**:
-    - **Section**: Container chính, dùng để chia các khối nội dung lớn.
+    - **Section**: Container chính, dùng để chia các khối nội dung lớn. **Lưu ý**: Luôn thiết lập **Min Height** cho Section để tránh lỗi LCP (Largest Contentful Paint).
     - **Row/Column**: Chia cột cho nội dung (vô cùng quan trọng để responsive).
     - **Slider / Banner**: Tạo các khối banner chuyển động hoặc tĩnh.
     - **Text / Headline**: Chèn nội dung văn bản.
