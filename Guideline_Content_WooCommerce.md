@@ -19,7 +19,7 @@
 ---
 
 ## 3. Định dạng Ảnh WebP (Bắt buộc)
-Mọi tài nguyên hình ảnh tải lên hệ thống (Sản phẩm, Banner, Logo) phải sử dụng định dạng `.webp`.
+Mọi tài nguyên hình ảnh tải lên hệ thống ( Banner, Logo) phải sử dụng định dạng `.webp`.
 
 ### Cơ chế chuyển đổi (WebP Conversion)
 Hệ thống sử dụng module WebP thuộc plugin **WC Enhancement Kit** để quản lý định dạng:
