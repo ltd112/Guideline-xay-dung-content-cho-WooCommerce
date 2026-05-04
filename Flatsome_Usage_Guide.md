@@ -3,7 +3,8 @@
 ## 1. Cấu hình Hệ thống (Customizer)
 Quản lý giao diện tập trung thông qua WordPress Customizer.
 
-- **Truy cập**: Dashboard -> **Appearance** -> **Customize**.
+- **Truy cập**: Dashboard -> **Appearance** -> **Customize** -> **Style**.
+<img src="images/flatsome/flatsome_appearance_customize.png" alt="flatsome_appearance_customize.png" />
 - **Colors (Màu sắc)**:
     - **Primary Color**: Thiết lập mã màu chủ đạo cho toàn bộ website.
     - **Secondary Color**: Thiết lập mã màu bổ trợ cho các thành phần tương tác (Button, Icon).
@@ -18,11 +19,18 @@ Quản lý giao diện tập trung thông qua WordPress Customizer.
 Công cụ thiết kế kéo thả tích hợp sẵn trong Flatsome.
 
 - **Thành phần cốt lõi (Core Elements)**:
-    - **Section**: Container cấp cao nhất. **Yêu cầu kỹ thuật**: Thiết lập **Min Height** để đảm bảo ổn định chỉ số LCP.
-    - **Row/Column**: Hệ thống Grid phân chia bố cục nội dung.
-    - **Slider/Banner**: Module hiển thị hình ảnh động hoặc tĩnh.
-    - **Text/Headline**: Module nhập liệu văn bản.
-    - **Button**: Module tạo điểm tương tác CTA.
+    - **Section**: Container bao bọc ngoài cùng của một khối nội dung. **Bắt buộc**: Luôn thiết lập **Min Height** (chiều cao tối thiểu) để ngăn chặn hiện tượng nhảy khung (Layout Shift), đảm bảo ổn định chỉ số LCP.
+    - **Row/Column**: Hệ thống lưới (Grid) giúp phân chia tỉ lệ và bố cục nội dung linh hoạt.
+    - **Slider/Banner**: Module hiển thị hình ảnh động/tĩnh, cần tối ưu kích thước ảnh phù hợp với khung hình.
+    - **Text/Headline**: Các thành phần văn bản, cần tuân thủ hệ thống Typography và đảm bảo độ tương phản màu sắc.
+    - **Button**: Các điểm tương tác kêu gọi hành động (CTA).
+
+- **Mô hình cấu trúc Layout mẫu**:
+    Một Layout chuẩn trong UX Builder cần tuân thủ tính phân cấp và các yêu cầu kỹ thuật sau:
+    - **Cấu trúc phân cấp (Hierarchy)**:
+    <img src="images/flatsome/flatsome_section.png" alt="Cấu trúc phân cấp UX Builder" />
+    - **Thiết lập Min Height**: Đảm bảo Section có chiều cao xác định ngay khi bắt đầu tải trang để tối ưu Core Web Vitals.
+    <img src="images/flatsome/flatsome_section_min_height.png" alt="Thiết lập Min Height cho Section" />
 - **Tối ưu Responsive**:
     - Sử dụng trình xem trước (Mobile/Tablet viewport) để kiểm tra layout.
     - **Visibility**: Điều chỉnh trạng thái hiển thị (Show/Hide) của element trên từng loại thiết bị.
@@ -30,8 +38,12 @@ Công cụ thiết kế kéo thả tích hợp sẵn trong Flatsome.
 ---
 
 ## 3. Quản lý Header & Footer
-- **Header Builder**: Dashboard -> **Flatsome** -> **Theme Options** -> **Header**. Hỗ trợ kéo thả các element Logo, Menu, Cart.
+- **Header Builder**: Dashboard -> **Flatsome** -> **Theme Options** -> **Header**. 
+    - **Tính năng**: Cung cấp giao diện kéo thả trực quan để sắp xếp các thành phần như Logo, Menu, Cart, Search vào các vị trí mong muốn trên Header.
+    <img src="images/flatsome/flatsome_header.png" alt="Giao diện Flatsome Header Builder" />
+
 - **Footer Config**: Dashboard -> **Flatsome** -> **Theme Options** -> **Footer**.
+    - **Lưu ý tối ưu trải nghiệm người dùng (UX)**: Màu sắc hiển thị trong quá trình tải trang (Initial Load) bị chi phối bởi màu nền của **Absolute Footer**.
 
 ---
 
@@ -39,3 +51,6 @@ Công cụ thiết kế kéo thả tích hợp sẵn trong Flatsome.
 Công cụ tạo các thành phần nội dung có khả năng tái sử dụng (Global components).
 - **Truy cập**: Dashboard -> **UX Blocks**.
 - **Cơ chế**: Thiết kế bằng UX Builder và nhúng vào vị trí bất kỳ qua Shortcode.
+
+## 5. Tài liệu tham khảo
+- [Flatsome Documentation](https://docs.uxthemes.com/)
