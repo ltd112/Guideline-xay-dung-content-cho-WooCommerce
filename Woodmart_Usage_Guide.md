@@ -9,7 +9,7 @@ Quản lý cấu hình tập trung thông qua bảng điều khiển Woodmart.
 - **Typography**:
     - Thiết lập Font Family chi tiết cho từng thành phần (Text, Headlines, Navigation).
     - Hỗ trợ tích hợp trực tiếp Google Fonts.
-    - **Yêu cầu kỹ thuật**: Đảm bảo độ tương phản (Contrast) đạt tiêu chuẩn **WCAG AA** (tối thiểu 4.5:1) giữa màu chữ và nền để đảm bảo khả năng đọc.
+    - **Yêu cầu kỹ thuật**: Đảm bảo độ tương phản (Contrast) đạt tiêu chuẩn **WCAG AA** (tối thiểu 4.5:1) giữa màu chữ và nền để đảm bảo điểm số **Accessibility**.
 
 ---
 
@@ -17,7 +17,7 @@ Quản lý cấu hình tập trung thông qua bảng điều khiển Woodmart.
 Sử dụng Elementor phối hợp với các Widget đặc thù của Woodmart để tối ưu hiệu suất và giao diện.
 
 - **Kiến trúc Container**:
-    - **Yêu cầu kỹ thuật**: Mọi khối nội dung phải được bao bọc trong một **Container**. Đây là quy tắc bắt buộc để đảm bảo tính đồng nhất về Grid hệ thống. 
+    - **Yêu cầu kỹ thuật**: Mọi khối nội dung phải được bao bọc trong một **Container**. Đây là quy tắc bắt buộc để đảm bảo tính đồng nhất và kiểm soát **Min Height**. 
     <div align="center" >
         <img src="images/woodmart/woodmart_container.png" alt="Kiến trúc Container Woodmart"></img> 
     </div>

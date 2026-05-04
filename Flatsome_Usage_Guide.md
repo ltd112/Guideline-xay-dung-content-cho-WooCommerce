@@ -15,7 +15,7 @@ Quản lý giao diện tập trung thông qua WordPress Customizer.
 - **Typography (Font chữ)**:
     - **Headlines**: Cấu hình Font Family cho các thẻ tiêu đề (H1-H6).
     - **Base**: Cấu hình Font Family cho nội dung văn bản mặc định.
-    - **Yêu cầu kỹ thuật**: Đảm bảo độ tương phản (Contrast) đạt tiêu chuẩn **WCAG AA** (tối thiểu 4.5:1) giữa màu chữ và nền để đảm bảo khả năng đọc.
+    - **Yêu cầu kỹ thuật**: Đảm bảo độ tương phản (Contrast) đạt tiêu chuẩn **WCAG AA** (tối thiểu 4.5:1) giữa màu chữ và nền để đảm bảo điểm số **Accessibility**.
 
 ---
 
@@ -23,7 +23,7 @@ Quản lý giao diện tập trung thông qua WordPress Customizer.
 Công cụ thiết kế kéo thả tích hợp sẵn trong Flatsome.
 
 - **Thành phần cốt lõi (Core Elements)**:
-    - **Section**: Container bao bọc ngoài cùng của một khối nội dung. **Bắt buộc**: Luôn thiết lập **Min Height** (chiều cao tối thiểu) để ngăn chặn hiện tượng nhảy khung (Layout Shift), đảm bảo ổn định chỉ số LCP.
+    - **Section**: Container bao bọc ngoài cùng của một khối nội dung. **Luôn thiết lập** **Min Height** (chiều cao tối thiểu) để ngăn chặn hiện tượng nhảy khung (Layout Shift), đảm bảo ổn định chỉ số LCP.
     - **Row/Column**: Hệ thống lưới (Grid) giúp phân chia tỉ lệ và bố cục nội dung linh hoạt.
     - **Slider/Banner**: Module hiển thị hình ảnh động/tĩnh, cần tối ưu kích thước ảnh phù hợp với khung hình.
     - **Text/Headline**: Các thành phần văn bản, cần tuân thủ hệ thống Typography và đảm bảo độ tương phản màu sắc.
