@@ -9,9 +9,10 @@
 
     ví dụ: 
     <div align="center">
+        <a href="https://fanjerseyspain.com/wp-content/uploads/2026/04/Fanjersey-Spain-small.webp" target="_blank">
         <img src="https://fanjerseyspain.com/wp-content/uploads/2026/04/Fanjersey-Spain-small.webp" alt="Logo Example" />
+        </a>
     </div>
-    *Link xem ảnh: [https://fanjerseyspain.com/wp-content/uploads/2026/04/Fanjersey-Spain-small.webp](https://fanjerseyspain.com/wp-content/uploads/2026/04/Fanjersey-Spain-small.webp)*
 ---
 
 ## 2. Thông số kỹ thuật Banner
@@ -19,10 +20,12 @@
 - **Kích thước**: `1920x700px` hoặc `1920x800px`.
 - **Dung lượng**: Tối đa `200KB`.
     ví dụ: 
+    
     <div align="center">
+        <a href="https://fanjerseyspain.com/wp-content/uploads/2026/04/Fanjersey-Spain-1-1.webp" target="_blank">
         <img src="https://fanjerseyspain.com/wp-content/uploads/2026/04/Fanjersey-Spain-1-1.webp" alt="Banner Example" />
-    </div>
-    *Link xem ảnh: [https://fanjerseyspain.com/wp-content/uploads/2026/04/Fanjersey-Spain-1-1.webp](https://fanjerseyspain.com/wp-content/uploads/2026/04/Fanjersey-Spain-1-1.webp)*
+        </a>
+    </div> 
 
 ### Banner Mobile
 - **Kích thước**: `750x1000px` hoặc `800x1200px`.
@@ -47,4 +50,3 @@ Hệ thống sử dụng module WebP thuộc plugin **WC Enhancement Kit** để
    <div align="center">
        <img src="images/convert_image_to_webp.png" alt="convert_image_to_webp.png" />
    </div>
-   *Link xem ảnh: [images/convert_image_to_webp.png](images/convert_image_to_webp.png)*
