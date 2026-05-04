@@ -5,9 +5,9 @@
   - **Header Logo**: Rộng tối đa 250px, Cao tối đa 100px (Tỷ lệ 2:1 hoặc 3:1).
 
   - **Sticky Logo**: Chiều cao khuyến nghị 40-50px.
-    - **Favicon**: 512x512px.
+    - **Favicon**: tối thiểu 8x8px, khuyến nghị 48x48px.
 
-    ví dụ: 
+    ví dụ cho header logo: 
     <div align="center">
         <a href="https://fanjerseyspain.com/wp-content/uploads/2026/04/Fanjersey-Spain-small.webp" target="_blank">
         <img src="https://fanjerseyspain.com/wp-content/uploads/2026/04/Fanjersey-Spain-small.webp" alt="Logo Example" />
