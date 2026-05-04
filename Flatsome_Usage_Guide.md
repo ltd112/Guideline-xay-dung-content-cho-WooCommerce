@@ -4,7 +4,9 @@
 Quản lý giao diện tập trung thông qua WordPress Customizer.
 
 - **Truy cập**: Dashboard -> **Appearance** -> **Customize** -> **Style**.
-    <img src="images/flatsome/flatsome_appearance_customize.png" alt="Giao diện Customizer Style" />
+    <div align="center">
+        <img src="images/flatsome/flatsome_appearance_customize.png" alt="Giao diện Customizer Style" />
+    </div>
 
 - **Colors (Màu sắc)**:
     - **Primary Color**: Thiết lập mã màu chủ đạo cho toàn bộ website.
@@ -30,9 +32,13 @@ Công cụ thiết kế kéo thả tích hợp sẵn trong Flatsome.
 - **Mô hình cấu trúc Layout mẫu**:
     Một Layout chuẩn trong UX Builder cần tuân thủ tính phân cấp và các yêu cầu kỹ thuật sau:
     - **Cấu trúc phân cấp (Hierarchy)**:
-        <img src="images/flatsome/flatsome_section.png" alt="Cấu trúc phân cấp UX Builder" />
+        <div align="center">
+            <img src="images/flatsome/flatsome_section.png" alt="Cấu trúc phân cấp UX Builder" />
+        </div>
     - **Thiết lập Min Height**: Luôn thiết lập chiều cao tối thiểu cho Section để đảm bảo chỉ số LCP ổn định.
-        <img src="images/flatsome/flatsome_section_min_height.png" alt="Thiết lập Min Height cho Section" />
+        <div align="center">
+            <img src="images/flatsome/flatsome_section_min_height.png" alt="Thiết lập Min Height cho Section" />
+        </div>
 
 - **Tối ưu Responsive**:
     - **Viewport Switcher**: Sử dụng trình xem trước (Mobile/Tablet viewport) để kiểm tra bố cục trên đa thiết bị.
@@ -43,7 +49,9 @@ Công cụ thiết kế kéo thả tích hợp sẵn trong Flatsome.
 ## 3. Quản lý Header & Footer
 - **Header Builder**: Dashboard -> **Flatsome** -> **Theme Options** -> **Header**. 
     - **Tính năng**: Cung cấp giao diện kéo thả trực quan để sắp xếp các thành phần như Logo, Menu, Cart, Search vào các vị trí mong muốn trên Header.
-    <img src="images/flatsome/flatsome_header.png" alt="Giao diện Flatsome Header Builder" />
+    <div align="center">
+        <img src="images/flatsome/flatsome_header.png" alt="Giao diện Flatsome Header Builder" />
+    </div>
 
 - **Footer Config**: Dashboard -> **Flatsome** -> **Theme Options** -> **Footer**.
     - **Lưu ý tối ưu trải nghiệm người dùng (UX)**: Màu sắc hiển thị trong quá trình tải trang (Initial Load) bị chi phối bởi màu nền của **Absolute Footer**.

@@ -7,7 +7,10 @@
   - **Sticky Logo**: Chiều cao khuyến nghị 40-50px.
     - **Favicon**: 512x512px.
 
-    ví dụ: <img src="https://fanjerseyspain.com/wp-content/uploads/2026/04/Fanjersey-Spain-small.webp" alt="Logo Example" />
+    ví dụ: 
+    <div align="center">
+        <img src="https://fanjerseyspain.com/wp-content/uploads/2026/04/Fanjersey-Spain-small.webp" alt="Logo Example" />
+    </div>
     *Link xem ảnh: [https://fanjerseyspain.com/wp-content/uploads/2026/04/Fanjersey-Spain-small.webp](https://fanjerseyspain.com/wp-content/uploads/2026/04/Fanjersey-Spain-small.webp)*
 ---
 
@@ -15,7 +18,10 @@
 ### Banner Desktop
 - **Kích thước**: `1920x700px` hoặc `1920x800px`.
 - **Dung lượng**: Tối đa `200KB`.
-    ví dụ: <img src="https://fanjerseyspain.com/wp-content/uploads/2026/04/Fanjersey-Spain-1-1.webp" alt="Banner Example" />
+    ví dụ: 
+    <div align="center">
+        <img src="https://fanjerseyspain.com/wp-content/uploads/2026/04/Fanjersey-Spain-1-1.webp" alt="Banner Example" />
+    </div>
     *Link xem ảnh: [https://fanjerseyspain.com/wp-content/uploads/2026/04/Fanjersey-Spain-1-1.webp](https://fanjerseyspain.com/wp-content/uploads/2026/04/Fanjersey-Spain-1-1.webp)*
 
 ### Banner Mobile
@@ -27,6 +33,10 @@
 ## 3. Định dạng Ảnh WebP (Bắt buộc)
 Mọi tài nguyên hình ảnh tải lên hệ thống ( Banner, Logo) phải sử dụng định dạng `.webp`.
 
+<div align="center">
+    <img src="images/image-webp.png" alt="image-webp.png" />
+</div>
+
 ### Cơ chế chuyển đổi (WebP Conversion)
 Hệ thống sử dụng module WebP thuộc plugin **WC Enhancement Kit** để quản lý định dạng:
 
@@ -34,4 +44,7 @@ Hệ thống sử dụng module WebP thuộc plugin **WC Enhancement Kit** để
 2. **Bulk Migration**: Tính năng chuyển đổi hàng loạt cho các tài nguyên cũ:
    - **Đường dẫn**: Dashboard -> **Settings** -> **WC Enhancement Kit**.
    - **Thực hiện**: Tại card **WebP Conversion**, chọn **Start bulk migration** để kích hoạt quy trình quét toàn bộ thư viện.
-   <img src="images\convert_image_to_webp.png" alt="convert_image_to_webp.png" />
+   <div align="center">
+       <img src="images/convert_image_to_webp.png" alt="convert_image_to_webp.png" />
+   </div>
+   *Link xem ảnh: [images/convert_image_to_webp.png](images/convert_image_to_webp.png)*

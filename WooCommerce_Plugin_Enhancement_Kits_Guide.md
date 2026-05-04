@@ -18,18 +18,27 @@
 ## 1. Cấu hình Chung & Cài đặt
 - **Truy cập**: Dashboard -> **WC Enhancement Kit**.
 - **Chọn Template**: Đảm bảo chọn đúng giao diện mẫu tương ứng với theme đang dùng (**Flatsome** hoặc **WoodMart**).
-<img src="images\plugin\plugin_global_setting.png" alt="Cấu hình Chung & Cài đặt" />
+<div align="center" >
+    <img src="images\plugin\plugin_global_setting.png" alt="Cấu hình Chung & Cài đặt" />
+</div>
+
 ---
 
 ## 2. Giao diện Trang Sản phẩm (Single Product UI)
 Module tối ưu hiển thị, chỉ khả dụng cho theme **Flatsome**.
 
 - **Buy Now Button**:
-    <img src="images/plugin/plugin_buy_now_button.png" alt="Cấu hình nút Buy Now" />
+    <div align="center" >
+        <img src="images/plugin/plugin_buy_now_button.png" alt="Cấu hình nút Buy Now" />
+    </div>
+    
     - **Position**: Hỗ trợ thay đổi vị trí nút (Trước hoặc Sau nút Add to Cart).
     - **Animation**: Cấu hình loại hiệu ứng (Animation Type) và tỷ lệ thu phóng (Scale).
 - **Product Price**:
-    <img src="images/plugin/plugin_product_price.png" alt="Cấu hình hiển thị giá sản phẩm" />
+    <div align="center" >
+        <img src="images/plugin/plugin_product_price.png" alt="Cấu hình hiển thị giá sản phẩm" />
+    </div>
+    
     - **Price Range**: Chức năng ẩn khoảng giá (Min - Max price) của sản phẩm có biến thể.
     - **Variation Price**: Hiển thị giá cụ thể của biến thể đã chọn.
 - **Extra Content**:
@@ -38,13 +47,17 @@ Module tối ưu hiển thị, chỉ khả dụng cho theme **Flatsome**.
 
 ## 3. Hiển thị Biến thể (Variation Display)
 Module quản lý và tối ưu hóa trình chọn thuộc tính sản phẩm.
-<img src="images/plugin/plugin_variant_display.png" alt="Giao diện cấu hình Variation Display" />
+<div align="center" >
+    <img src="images/plugin/plugin_variant_display.png" alt="Giao diện cấu hình Variation Display" />
+</div>
 
 - **Smart Default Variant**: Tự động chọn biến thể đầu tiên khi tải trang.
 - **Force Form Data Loading**: Kích hoạt cơ chế tải trước dữ liệu để tăng tốc độ phản hồi khi khách hàng chọn option.
 - **Hide Reset Link**: Ẩn liên kết "Clear/Xóa" mặc định của WooCommerce.
 - **Selected Swatch Style**: Tùy chỉnh màu sắc (Color/Background) cho trạng thái đang được chọn (Active state) của Swatch.
-<img src="images/plugin/plugin_variant_style.png" alt="Cấu hình Style cho Swatch" />
+<div align="center" >
+    <img src="images/plugin/plugin_variant_style.png" alt="Cấu hình Style cho Swatch" />
+</div>
 
 ---
 
@@ -61,7 +74,9 @@ Truy cập qua: **Settings > WC Enhancement Kit > WebP Conversion**
 - **Bulk Migration**:
     - Chức năng quét và xử lý hàng loạt ảnh cũ chưa được tối ưu sang định dạng WebP.
     - Convert ảnh ngay khi được bấm start với từng batch 20 ảnh.
-    <img src="images/plugin/plugin_convert_image_to_webp.png" alt="Giao diện Bulk Migration WebP" />
+    <div align="center" >
+        <img src="images/plugin/plugin_convert_image_to_webp.png" alt="Giao diện Bulk Migration WebP" />
+    </div>
 
 ---
 
@@ -72,8 +87,9 @@ Truy cập qua: **Settings > WC Enhancement Kit > Product Tabs**
 - **Apply For**: Cấu hình phạm vi hiển thị (Toàn trang, Category, Brand hoặc Sản phẩm cụ thể).
 - **Tab Type**: Hỗ trợ loại `Default` (có sẵn) hoặc `Custom` (tự định nghĩa nội dung).
 - **Title**: Tiêu đề Tab.
-
-<img src="images/plugin/plugin_product_tab.png" alt="Cấu hình Product Tab" />
+<div align="center" >
+    <img src="images/plugin/plugin_product_tab.png" alt="Cấu hình Product Tab" />
+</div>
 
 ---
 
@@ -82,19 +98,27 @@ Module cho phép tạo và quản lý các nhóm trường thông tin tùy chỉ
 Truy cập qua: **Settings > WC Enhancement Kit > Product Advanced Fields**
 
 - **Quản lý danh sách**: Tổng quan các nhóm trường đã tạo và trạng thái hoạt động của chúng.
-<img src="images/plugin/plugin_product_advanced_field_list.png" alt="Danh sách Product Advanced Fields" />
+<div align="center" >
+    <img src="images/plugin/plugin_product_advanced_field_list.png" alt="Danh sách Product Advanced Fields" />
+</div>
 
 ### Cấu hình chi tiết (Advanced Field Settings)
 Khi tạo mới hoặc chỉnh sửa một nhóm trường, bạn cần thực hiện cấu hình qua 3 tab chính:
 
 1. **Group Setting**: Thiết lập tiêu đề cho nhóm trường và thứ tự hiển thị của nhóm trong trang chỉnh sửa sản phẩm.
-<img src="images/plugin/plugin_product_advanced_field_group_setting.png" alt="Cấu hình Group Setting" />
+<div align="center" >
+    <img src="images/plugin/plugin_product_advanced_field_group_setting.png" alt="Cấu hình Group Setting" />
+</div>
 
 2. **Fields**: Định nghĩa các trường dữ liệu con bên trong nhóm (bao gồm: Tên trường - Label, Khóa định danh - Key, và các tùy chọn hiển thị).
-<img src="images/plugin/plugin_product_advanced_field_fields.png" alt="Cấu hình Fields" />
+<div align="center" >
+    <img src="images/plugin/plugin_product_advanced_field_fields.png" alt="Cấu hình Fields" />
+</div>
 
 3. **Display Rule**: Thiết lập quy tắc hiển thị của nhóm trường (ví dụ: chỉ hiển thị cho một số danh mục sản phẩm cụ thể hoặc áp dụng cho toàn bộ cửa hàng).
-<img src="images/plugin/plugin_product_advanced_field_display_rule.png" alt="Cấu hình Display Rule" />
+<div align="center" >
+    <img src="images/plugin/plugin_product_advanced_field_display_rule.png" alt="Cấu hình Display Rule" />
+</div>
 ---
 
 ## 7. Bộ sưu tập (Collection)
@@ -103,19 +127,30 @@ Tính năng tạo trang danh sách sản phẩm nâng cao với quy tắc lọc 
 
 - **URL Slug**: Cấu hình đường dẫn tĩnh (mặc định: `/collections/`).
 - **Giao diện thêm mới**: Thêm mới các bộ sưu tập và tùy chỉnh giao diện.
-<img src="images/plugin/plugin_add_collection.png" alt="Giao diện thêm mới Collection" />
+<div align="center" >
+    <img src="images/plugin/plugin_add_collection.png" alt="Giao diện thêm mới Collection" />
+</div>
 
 - **Giao diện quản lý**: Quản lý các bộ sưu tập.
-<img src="images/plugin/plugin_list_collection.png" alt="Giao diện quản lý Collection" />
+<div align="center">
+    <img src="images/plugin/plugin_list_collection.png" alt="Giao diện quản lý Collection" />
+</div>
 
 - **Collection Fields**:
     - **Media**: Thiết lập ảnh Thumbnail và Banner cho từng bộ sưu tập.
-    <img src="images/plugin/plugin_product_collection_image.png" alt="Giao diện quản lý Collection" />
+    <div align="center" >
+        <img src="images/plugin/plugin_product_collection_image.png" alt="Giao diện quản lý Collection" />
+    </div>
+    
     - **Filters**: Thiết lập tiêu chí lọc sản phẩm (Attribute, Title, Category, Tags, Brand, Product).
-    <img src="images/plugin/plugin_product_collection_filter.png" alt="Giao diện quản lý Collection" />
+    <div align="center" >
+        <img src="images/plugin/plugin_product_collection_filter.png" alt="Giao diện quản lý Collection" />
+    </div>
 
 - **Product Sorting**: Hỗ trợ sắp xếp thủ công (Manual drag-drop) thứ tự sản phẩm.
-    <img src="images/plugin/plugin_product_collection_sort_by.png" alt="Giao diện quản lý Collection" />
+    <div align="center" >
+        <img src="images/plugin/plugin_product_collection_sort_by.png" alt="Giao diện quản lý Collection" />
+    </div>
 
 ---
 
@@ -126,14 +161,18 @@ Truy cập qua **Settings > WC Enhancement Kit > Admin Utilities**.
 ### 8.1. Công cụ Quản trị (Admin Tools)
 - **Product Tags Filter**: Bổ sung bộ lọc theo thẻ (Tags) tại trang danh sách sản phẩm, hỗ trợ tìm kiếm và phân loại kho hàng nhanh chóng.
 - **SEO Quick View**: Tích hợp cột xem nhanh dữ liệu SEO (Title, Meta Description) trực tiếp tại danh sách sản phẩm mà không cần vào trang chỉnh sửa.
-<img src="images/plugin/plugin_admin_filter.png" alt="Bộ lọc Tag và SEO Quick View" />
+<div align="center" >
+    <img src="images/plugin/plugin_admin_filter.png" alt="Bộ lọc Tag và SEO Quick View" />
+</div>
 
 ### 8.2. Bảo mật hệ thống (Admin Security)
 Cung cấp các lớp bảo mật bổ sung để bảo vệ website khỏi các cuộc tấn công phổ biến:
 - **XML-RPC & REST API**: Vô hiệu hóa các giao thức truy cập từ xa không cần thiết để chặn tấn công Brute Force.
 - **Hide System Info**: Loại bỏ Generator Meta Tag để ẩn phiên bản WordPress đang sử dụng.
 - **User Privacy**: Chặn việc dò tìm Username qua REST API và vô hiệu hóa trang lưu trữ tác giả (Author Archives).
-<img src="images/plugin/plugin_admin_serurity.png" alt="Các thiết lập bảo mật Admin Security" />
+<div align="center" >
+    <img src="images/plugin/plugin_admin_serurity.png" alt="Các thiết lập bảo mật Admin Security" />
+</div>
 
 ### 8.3. Trình nhập liệu sản phẩm (Product Importer)
 - **Đa định dạng**: Hỗ trợ nhập liệu linh hoạt từ Shopbase CSV và WooCommerce chuẩn CSV.
