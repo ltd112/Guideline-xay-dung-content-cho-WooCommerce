@@ -9,7 +9,7 @@
 3.  [**Variation Display**](#3-hiển-thị-biến-thể-variation-display): Tối ưu hóa trình chọn thuộc tính sản phẩm.
 4.  [**WebP Conversion**](#4-tối-ưu-ảnh-webp-conversion): Tự động tối ưu hóa định dạng ảnh sang WebP.
 5.  [**Product Tabs**](#5-tab-sản-phẩm-product-tabs): Quản lý các tab thông tin bổ sung.
-6.  [**Product Advanced Fields**](#6-module-nâng-cao-sản-phẩm-product-advanced-fields): Tự động tạo các trường dữ liệu tùy chỉnh cho sản phẩm.
+6.  [**Product Advanced Fields**](#6-trường-nâng-cao-product-advanced-fields): Tự động tạo các trường dữ liệu tùy chỉnh cho sản phẩm.
 7.  [**Collection**](#7-bộ-sưu-tập-collection): Công cụ tạo danh mục sản phẩm động.
 8.  [**Admin Utilities**](#8-công-cụ-admin--nhập-liệu): Các công cụ quản trị, bảo mật và nhập liệu.
 

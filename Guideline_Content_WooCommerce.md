@@ -5,16 +5,18 @@
   - **Header Logo**: Rộng tối đa 250px, Cao tối đa 100px (Tỷ lệ 2:1 hoặc 3:1).
 
   - **Sticky Logo**: Chiều cao khuyến nghị 40-50px.
-  - **Favicon**: 512x512px.
+    - **Favicon**: 512x512px.
 
-    ví dụ: <img src = 'https://fanjerseyspain.com/wp-content/uploads/2026/04/Fanjersey-Spain-small.webp'></img> 
+    ví dụ: <img src="https://fanjerseyspain.com/wp-content/uploads/2026/04/Fanjersey-Spain-small.webp" alt="Logo Example" />
+    *Link xem ảnh: [https://fanjerseyspain.com/wp-content/uploads/2026/04/Fanjersey-Spain-small.webp](https://fanjerseyspain.com/wp-content/uploads/2026/04/Fanjersey-Spain-small.webp)*
 ---
 
 ## 2. Thông số kỹ thuật Banner
 ### Banner Desktop
 - **Kích thước**: `1920x700px` hoặc `1920x800px`.
 - **Dung lượng**: Tối đa `200KB`.
-    ví dụ: <img src = 'https://fanjerseyspain.com/wp-content/uploads/2026/04/Fanjersey-Spain-1-1.webp'></img> 
+    ví dụ: <img src="https://fanjerseyspain.com/wp-content/uploads/2026/04/Fanjersey-Spain-1-1.webp" alt="Banner Example" />
+    *Link xem ảnh: [https://fanjerseyspain.com/wp-content/uploads/2026/04/Fanjersey-Spain-1-1.webp](https://fanjerseyspain.com/wp-content/uploads/2026/04/Fanjersey-Spain-1-1.webp)*
 
 ### Banner Mobile
 - **Kích thước**: `750x1000px` hoặc `800x1200px`.

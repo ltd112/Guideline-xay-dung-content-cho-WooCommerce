@@ -4,10 +4,12 @@
 Quản lý giao diện tập trung thông qua WordPress Customizer.
 
 - **Truy cập**: Dashboard -> **Appearance** -> **Customize** -> **Style**.
-<img src="images/flatsome/flatsome_appearance_customize.png" alt="flatsome_appearance_customize.png" />
+    <img src="images/flatsome/flatsome_appearance_customize.png" alt="Giao diện Customizer Style" />
+
 - **Colors (Màu sắc)**:
     - **Primary Color**: Thiết lập mã màu chủ đạo cho toàn bộ website.
     - **Secondary Color**: Thiết lập mã màu bổ trợ cho các thành phần tương tác (Button, Icon).
+
 - **Typography (Font chữ)**:
     - **Headlines**: Cấu hình Font Family cho các thẻ tiêu đề (H1-H6).
     - **Base**: Cấu hình Font Family cho nội dung văn bản mặc định.
@@ -28,12 +30,13 @@ Công cụ thiết kế kéo thả tích hợp sẵn trong Flatsome.
 - **Mô hình cấu trúc Layout mẫu**:
     Một Layout chuẩn trong UX Builder cần tuân thủ tính phân cấp và các yêu cầu kỹ thuật sau:
     - **Cấu trúc phân cấp (Hierarchy)**:
-    <img src="images/flatsome/flatsome_section.png" alt="Cấu trúc phân cấp UX Builder" />
-    - **Thiết lập Min Height**: Đảm bảo Section có chiều cao xác định ngay khi bắt đầu tải trang để tối ưu Core Web Vitals.
-    <img src="images/flatsome/flatsome_section_min_height.png" alt="Thiết lập Min Height cho Section" />
+        <img src="images/flatsome/flatsome_section.png" alt="Cấu trúc phân cấp UX Builder" />
+    - **Thiết lập Min Height**: Luôn thiết lập chiều cao tối thiểu cho Section để đảm bảo chỉ số LCP ổn định.
+        <img src="images/flatsome/flatsome_section_min_height.png" alt="Thiết lập Min Height cho Section" />
+
 - **Tối ưu Responsive**:
-    - Sử dụng trình xem trước (Mobile/Tablet viewport) để kiểm tra layout.
-    - **Visibility**: Điều chỉnh trạng thái hiển thị (Show/Hide) của element trên từng loại thiết bị.
+    - **Viewport Switcher**: Sử dụng trình xem trước (Mobile/Tablet viewport) để kiểm tra bố cục trên đa thiết bị.
+    - **Visibility**: Điều chỉnh trạng thái hiển thị (Show/Hide) của từng Element để tối ưu nội dung trên từng loại màn hình.
 
 ---
 
