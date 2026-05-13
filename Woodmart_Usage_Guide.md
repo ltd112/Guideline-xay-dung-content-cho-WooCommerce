@@ -53,14 +53,14 @@ Woodmart cung cấp trình xây dựng Header mạnh mẽ với cơ chế kéo t
 
 ---
 
-## 4. Cấu hình hiển thị Attribute và Plugin Bổ trợ (WC Enhancement Kit)
+## 4. Cấu hình Plugin Bổ trợ (WC Enhancement Kit)
 Truy cập plugin thông qua **Settings -> WC Enhancement Kit**.
 
-### Module Optimization
+### 4.1. Tối ưu hóa Module (Module Optimization)
 - **Theme Config**: Bật tùy chọn **Woodmart config** trong dashboard của plugin.
 - **Module Optimization**: Khuyên dùng trạng thái **Disable** cho các module **Single Product** và **Pagination** và các module **Legacy** của plugin để tránh xung đột với tính năng gốc của Woodmart.
 
-### Variation Display (Hiển thị Biến thể)
+### 4.2. Hiển thị Biến thể (Variation Display)
 - **Enable URL Rewrite**: Tạo **Permalinks riêng** cho từng biến thể sản phẩm.
 - **Force Form Data Loading**: Kích hoạt cơ chế **tải trước dữ liệu form thuộc tính**.
 - **Smart Default Variant**: Tự động **kích hoạt biến thể đầu tiên** khi tải trang.
@@ -69,30 +69,40 @@ Truy cập plugin thông qua **Settings -> WC Enhancement Kit**.
         <img src="images/plugin/wc-enhancement-kit/plugin_variant_display.png" alt="Cấu hình hiển thị biến thể trong Woodmart" ></img>
     </div>
     
-### Cấu hình Swatches cho Thuộc tính (Attributes)
-Để thay thế danh sách thả xuống mặc định bằng các ô chọn màu sắc hoặc kiểu dáng (Swatches) trực quan, hãy thực hiện theo quy trình sau:
+---
 
-1. **Cấu hình cấp Thuộc tính (Global settings)**:
-    - **Truy cập**: Dashboard -> **Products** -> **Attributes**.
-    - **Thao tác**: Chọn thuộc tính cần cấu hình (ví dụ: **Style**, **Color**) và nhấn **Edit**.
-    - **Các thông số quan trọng**:
-        - **Swatch style**: Thiết lập kiểu hiển thị khi chọn biến thể.
-        - **Disabled swatch style**: Trạng thái hiển thị khi biến thể hết hàng.
-        - **Swatch shape**: Hình dạng của ô chọn (Rounded hoặc Square).
-        - **Swatch size**: Kích thước hiển thị (XS, S, M, L, XL).
+## 5. Cấu hình Swatches cho Thuộc tính (Attributes - Gốc của Woodmart)
+Để thay thế danh sách thả xuống mặc định ngoài frontend bằng các ô chọn màu sắc hoặc kiểu dáng (Swatches) trực quan bằng tính năng gốc cực kỳ mạnh mẽ của Woodmart, hãy thực hiện theo quy trình sau:
+
+### 5.1. Cấu hình cấp Thuộc tính (Global Settings)
+- **Truy cập**: Dashboard -> **Products** -> **Attributes**.
+- **Thao tác**: Chọn thuộc tính cần cấu hình (ví dụ: **Size**) và nhấn **Edit**.
+    <div align="center" >
+        <img src="images/woodmart/attribute-step-1.png" alt="Cấu hình Attribute Swatch trong Woodmart" ></img>
+    </div>
+- **Các thông số quan trọng**:
+    - **Swatch style**: Thiết lập kiểu hiển thị khi chọn biến thể.
+    - **Disabled swatch style**: Trạng thái hiển thị khi biến thể hết hàng.
+    - **Swatch shape**: Hình dạng của ô chọn (Rounded hoặc Square).
+    - **Swatch size**: Kích thước hiển thị (XS, S, M, L, XL).
     <div align="center" >
         <img src="images/woodmart/woodmart_attribute_swatch.png" alt="Cấu hình Attribute Swatch trong Woodmart" ></img>
     </div>
+- **Lưu cấu hình**: Sau khi thiết lập xong các thông số trên, cuộn xuống dưới cùng và nhấn nút **Update** để lưu lại cấu hình cấp thuộc tính.
     
-2. **Cấu hình giá trị hiển thị (Configure Terms)**:
-    - **Thao tác**: Tại danh sách thuộc tính, chọn **Configure terms** cho thuộc tính tương ứng.
-    - **Kích hoạt**: Chỉnh sửa từng giá trị (ví dụ: màu Đỏ, size L) và bật tùy chọn **Enable text swatch** hoặc thiết lập màu sắc/hình ảnh minh họa cụ thể.
+### 5.2. Cấu hình giá trị hiển thị (Configure Terms)
+- **Quay lại danh sách thuộc tính**: Sau khi nhấn *Update* ở bước 5.1, click vào liên kết **Attributes** ở menu bên trái (trong mục **Products -> Attributes**) để quay lại bảng danh sách thuộc tính tổng quát.
+- **Thao tác**: Tìm thuộc tính **Size** trong bảng danh sách, di chuột đến cột ngoài cùng bên phải và click vào liên kết **Configure terms** của dòng Size đó.
+- **Kích hoạt giá trị cụ thể**: 
+  - Tại bảng danh sách các giá trị thuộc tính Size hiện ra (ví dụ: *S, M, L, XL*), click nút **Edit** bên dưới giá trị muốn chỉnh sửa (ví dụ: **L**).
+  - Tùy chỉnh bật tùy chọn **Enable text swatch** hoặc thiết lập mã màu/ảnh minh họa cụ thể cho giá trị này.
     <div align="center" >
         <img src="images/woodmart/woodmart_attribute_value_swatch.png" alt="Cấu hình giá trị Swatch chi tiết" ></img>
     </div>
+- **Lưu cấu hình**: Sau khi cập nhật giá trị màu sắc, chữ hoặc hình ảnh minh họa cho term, cuộn xuống dưới cùng và nhấn nút **Update** (hoặc **Save Changes**) để áp dụng các thay đổi hiển thị ra ngoài frontend.
 
 ---
 
-## 5. Tài liệu tham khảo
+## 6. Tài liệu tham khảo
 - [Woodmart Documentation](https://xtemos.com/documentation/woodmart/)
 - [Công cụ kiểm tra độ tương phản](https://webaim.org/resources/contrastchecker/)
