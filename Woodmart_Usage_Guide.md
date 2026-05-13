@@ -93,8 +93,12 @@ Truy cập plugin thông qua **Settings -> WC Enhancement Kit**.
 ### 5.2. Cấu hình giá trị hiển thị (Configure Terms)
 - **Quay lại danh sách thuộc tính**: Sau khi nhấn *Update* ở bước 5.1, click vào liên kết **Attributes** ở menu bên trái (trong mục **Products -> Attributes**) để quay lại bảng danh sách thuộc tính tổng quát.
 - **Thao tác**: Tìm thuộc tính **Size** trong bảng danh sách, di chuột đến cột ngoài cùng bên phải và click vào liên kết **Configure terms** của dòng Size đó.
+    <div align="center" >
+        <img src="images/woodmart/attribute-step-2.png" alt="Cấu hình giá trị Swatch chi tiết" ></img>
+    </div>
 - **Kích hoạt giá trị cụ thể**: 
   - Tại bảng danh sách các giá trị thuộc tính Size hiện ra (ví dụ: *S, M, L, XL*), click nút **Edit** bên dưới giá trị muốn chỉnh sửa (ví dụ: **L**).
+  
   - Tùy chỉnh bật tùy chọn **Enable text swatch** hoặc thiết lập mã màu/ảnh minh họa cụ thể cho giá trị này.
     <div align="center" >
         <img src="images/woodmart/woodmart_attribute_value_swatch.png" alt="Cấu hình giá trị Swatch chi tiết" ></img>
