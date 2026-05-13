@@ -1,7 +1,7 @@
 # Hướng dẫn Sử dụng Plugin WooCommerce Enhancement Kits
 
 > [!NOTE]
-> Đây là tài liệu hướng dẫn kỹ thuật và vận hành chi tiết dành cho plugin **WooCommerce Enhancement Kits**. Tài liệu này đã tích hợp đầy đủ mọi lưu ý kỹ thuật từ file Word gốc, đảm bảo tính độc lập và chính xác cao khi áp dụng vào thực tế.
+> Đây là tài liệu hướng dẫn kỹ thuật và vận hành chi tiết dành cho plugin **WooCommerce Enhancement Kits**.
 
 ---
 
@@ -17,6 +17,7 @@
 8. [**Công cụ Admin & Bảo mật (Admin Utilities)**](#8-công-cụ-admin-bảo-mật--nhập-liệu) - Chặn Brute Force, tinh chỉnh bảng quản trị và các hành động xóa nhanh chống timeout.
 9. [**Trình nhập liệu sản phẩm (Product Importer)**](#9-trình-nhập-liệu-sản-phẩm-product-importer) - Hỗ trợ nhập CSV từ Shopbase/WooCommerce với cơ chế tự phục hồi.
 10. [**Trình dán ảnh (Image Attacher)**](#10-trình-dán-ảnh-image-attacher) - Tải ảnh hàng loạt thông qua liên kết từ xa không lưu trữ.
+11. [**Tối ưu hình ảnh WebP (WebP Conversion)**](#11-tối-ưu-hình-ảnh-webp-webp-conversion) - Tự động chuyển đổi sang WebP khi tải lên và tối ưu hóa hàng loạt.
 
 ---
 
@@ -272,3 +273,37 @@ Công cụ hỗ trợ tải và đính kèm nhanh hình ảnh vào thư viện M
 * **Lưu ý**:
   > [!IMPORTANT]
   > Không sử dụng chức năng này để tải lên các tài nguyên ảnh hệ thống quan trọng như logo chính, favicon của website. Chức năng này chỉ phù hợp để chuẩn bị nhanh ảnh mô tả hoặc ảnh gallery cho sản phẩm hàng loạt.
+
+---
+
+## 11. Tối ưu hình ảnh WebP (WebP Conversion)
+Hệ thống tích hợp module WebP Conversion mạnh mẽ, tự động chuyển đổi, thu nhỏ kích thước và tối ưu hóa dung lượng hình ảnh để đạt điểm hiệu năng cao nhất trên Google PageSpeed Insights.
+
+* **Đường dẫn**: Dashboard -> **Settings** -> **WC Enhancement Kit** -> **WebP Conversion**.
+
+<div align="center">
+    <img src="images/plugin/wc-enhancement-kit/plugin_convert_image_to_webp.png" alt="Giao diện WebP Conversion" />
+</div>
+
+### 11.1. Cấu hình chi tiết (WebP Settings)
+* **Enable WebP Upload Conversion**: Hộp chọn (Checkbox) cho phép bật hoặc tắt tính năng tự động chuyển đổi định dạng ảnh sang WebP ngay khi upload.
+* **WebP Quality (Chất lượng ảnh WebP)**: Trường nhập số quy định chất lượng nén của hình ảnh sau khi chuyển đổi:
+  * **Giá trị nhỏ nhất (Min)**: `60`
+  * **Giá trị lớn nhất (Max)**: `100`
+  * **Giá trị mặc định (Default)**: `85` (Cân bằng hoàn hảo giữa dung lượng siêu nhẹ và độ sắc nét thị giác).
+* **Resize on Upload & Maximum Dimensions (Giới hạn kích thước ảnh)**:
+  * Tự động thay đổi kích thước (Resize) của hình ảnh quá khổ khi tải lên để tránh lãng phí tài nguyên máy chủ.
+  * **Giá trị mặc định (Default)**: `2000` px.
+  * **Giá trị nhỏ nhất (Min)**: `100` px.
+  * Nếu ảnh tải lên có chiều rộng hoặc chiều cao vượt quá giới hạn cấu hình này, hệ thống sẽ tự động thu nhỏ (Scale) về đúng kích thước giới hạn tối đa trước khi thực hiện chuyển đổi WebP.
+
+### 11.2. Chuyển đổi Hàng loạt (Bulk Migration)
+* **Mục đích**: Chuyển đổi toàn bộ tài nguyên hình ảnh cũ đã tải lên website từ trước khi cài đặt plugin sang định dạng WebP.
+* **Cách thực hiện**: Click vào nút hành động **Start Bulk Migration** (hoặc **Bulk Migration**).
+* **Cơ chế hoạt động**:
+  * **Xử lý phân mảng (Batch processing)**: Để tránh quá tải CPU/RAM của server, hệ thống tự động chia nhỏ tiến trình chạy ngầm thành từng đợt, xử lý **20 ảnh cho 1 lần** (batch 20 images).
+  * **Cơ chế tự sửa lỗi & Thử lại (Retry)**: Trong trường hợp quá trình xử lý gặp sự cố kết nối hoặc lỗi máy chủ cục bộ đối với một số hình ảnh nhất định, hệ thống tự động kích hoạt **cơ chế thử lại tối đa 3 lần** (retry 3 times) cho mỗi ảnh trước khi đánh dấu lỗi, đảm bảo tỷ lệ hoàn thành tuyệt đối mà không cần admin thao tác thủ công.
+
+### 11.3. Cơ chế tự động dọn dẹp khi Xóa ảnh (Image Deletion)
+* Khi người dùng thực hiện xóa một tệp ảnh bất kỳ trong thư viện **Media Library**:
+  * Hệ thống sẽ **tự động xóa sạch đồng thời cả phiên bản ảnh tối ưu dạng `.webp` lẫn tệp ảnh gốc ban đầu**
