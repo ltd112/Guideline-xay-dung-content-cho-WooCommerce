@@ -66,7 +66,7 @@ Truy cập plugin thông qua **Settings -> WC Enhancement Kit**.
 - **Smart Default Variant**: Tự động **kích hoạt biến thể đầu tiên** khi tải trang.
 - **Swatch Styling**: Cấu hình **CSS** (Background/Text Color) cho trạng thái **Selected** tại phần Swatch Settings.
     <div align="center" >
-        <img src="images\plugin\plugin_variant_display.png" alt="Cấu hình hiển thị biến thể trong Woodmart" ></img>
+        <img src="images/plugin/wc-enhancement-kit/plugin_variant_display.png" alt="Cấu hình hiển thị biến thể trong Woodmart" ></img>
     </div>
     
 ### Cấu hình Swatches cho Thuộc tính (Attributes)

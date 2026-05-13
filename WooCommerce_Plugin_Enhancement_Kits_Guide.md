@@ -1,182 +1,274 @@
-# Hướng dẫn Sử dụng Plugin WC Enhancement Kit
+# Hướng dẫn Sử dụng Plugin WooCommerce Enhancement Kits
 
-> Đây là các điểm cần lưu ý chính khi sử dụng plugin. Tài liệu hướng dẫn sử dụng chi tiết và đầy đủ có tại: [Google Docs - WC Enhancement Kit Guide](https://docs.google.com/document/d/1nW-ad7lRfS3UATdKyQ0E3tejxrnFDEB6zzRJFmpT4Uw/edit?usp=sharing)
-
-## Quick Start
-
-1.  [**Global Settings**](#1-cấu-hình-chung--cài-đặt): Cài đặt chung và chọn Template cho Plugin.
-2.  [**Single Product UI**](#2-giao-diện-trang-sản-phẩm-single-product-ui): Tối ưu hiển thị trang sản phẩm (Chỉ dành cho Flatsome).
-3.  [**Variation Display**](#3-hiển-thị-biến-thể-variation-display): Tối ưu hóa trình chọn thuộc tính sản phẩm.
-4.  [**WebP Conversion**](#4-tối-ưu-ảnh-webp-conversion): Tự động tối ưu hóa định dạng ảnh sang WebP.
-5.  [**Product Tabs**](#5-tab-sản-phẩm-product-tabs): Quản lý các tab thông tin bổ sung.
-6.  [**Product Advanced Fields**](#6-trường-nâng-cao-product-advanced-fields): Tự động tạo các trường dữ liệu tùy chỉnh cho sản phẩm.
-7.  [**Collection**](#7-bộ-sưu-tập-collection): Công cụ tạo danh mục sản phẩm động.
-8.  [**Admin Utilities**](#8-công-cụ-admin--nhập-liệu): Các công cụ quản trị, bảo mật và nhập liệu.
+> [!NOTE]
+> Đây là tài liệu hướng dẫn kỹ thuật và vận hành chi tiết dành cho plugin **WooCommerce Enhancement Kits**. Tài liệu này đã tích hợp đầy đủ mọi lưu ý kỹ thuật từ file Word gốc, đảm bảo tính độc lập và chính xác cao khi áp dụng vào thực tế.
 
 ---
 
-## 1. Cấu hình Chung & Cài đặt
+## Danh Mục Tính Năng (Quick Navigation)
+
+1. [**Cấu hình Chung (Global Settings)**](#1-cấu-hình-chung--chọn-template) - Cài đặt cơ bản và chọn mẫu tương thích theme.
+2. [**Giao diện Sản phẩm (Single Product UI)**](#2-giao-diện-trang-sản-phẩm-single-product-ui) - Tối ưu hóa các nút bấm, trường số lượng và nội dung bổ sung.
+3. [**Hiển thị Biến thể (Variation Display)**](#3-hiển-thị-biến-thể-variation-display) - Tối ưu hóa trình chọn thuộc tính và luồng chọn biến thể thông minh.
+4. [**Tab Sản phẩm (Product Tabs)**](#4-tab-sản-phẩm-product-tabs) - Tạo các tab thông tin mở rộng theo phân quyền người dùng và danh mục.
+5. [**Tùy chỉnh Thanh toán (Custom Checkout)**](#5-tùy-chỉnh-thanh-toán-custom-checkout) - Ẩn/hiện linh hoạt các trường trong checkout form.
+6. [**Bộ sưu tập (Collection)**](#6-bộ-sưu-tập-collection) - Tạo trang danh mục sản phẩm động dựa trên bộ lọc điều kiện và sắp xếp thủ công.
+7. [**Phân trang (Pagination)**](#7-phân-trang-pagination) - Tùy chỉnh thẩm mỹ khối phân trang.
+8. [**Công cụ Admin & Bảo mật (Admin Utilities)**](#8-công-cụ-admin-bảo-mật--nhập-liệu) - Chặn Brute Force, tinh chỉnh bảng quản trị và các hành động xóa nhanh chống timeout.
+9. [**Trình nhập liệu sản phẩm (Product Importer)**](#9-trình-nhập-liệu-sản-phẩm-product-importer) - Hỗ trợ nhập CSV từ Shopbase/WooCommerce với cơ chế tự phục hồi.
+10. [**Trình dán ảnh (Image Attacher)**](#10-trình-dán-ảnh-image-attacher) - Tải ảnh hàng loạt thông qua liên kết từ xa không lưu trữ.
+
+---
+
+## 1. Cấu hình Chung & Chọn Template
 - **Truy cập**: Dashboard -> **WC Enhancement Kit**.
-- **Chọn Template**: Đảm bảo chọn đúng giao diện mẫu tương ứng với theme đang dùng (**Flatsome** hoặc **WoodMart**).
-<div align="center" >
-    <img src="images\plugin\plugin_global_setting.png" alt="Cấu hình Chung & Cài đặt" />
+- **Chọn Template**: Cần chọn chính xác giao diện mẫu tương ứng với theme đang dùng (**Flatsome** hoặc **WoodMart**) để đảm bảo plugin hoạt động đồng bộ với CSS của theme.
+<div align="center">
+    <img src="images/plugin/wc-enhancement-kit/plugin_global_setting.png" alt="Cấu hình Chung & Cài đặt" />
 </div>
 
 ---
 
 ## 2. Giao diện Trang Sản phẩm (Single Product UI)
-Module tối ưu hiển thị, chỉ khả dụng cho theme **Flatsome**.
+> [!IMPORTANT]
+> **Khả năng tương thích**: Toàn bộ tính năng trong mục này chỉ hoạt động và được thiết kế tối ưu cho theme **Flatsome**. Nếu website đang sử dụng theme **WoodMart**, bạn **nên tắt hoàn toàn** các thiết lập thuộc module này để tránh xung đột giao diện hoặc lỗi hiển thị.
 
-- **Buy Now Button**:
-    <div align="center" >
-        <img src="images/plugin/plugin_buy_now_button.png" alt="Cấu hình nút Buy Now" />
-    </div>
-    
-    - **Position**: Hỗ trợ thay đổi vị trí nút (Trước hoặc Sau nút Add to Cart).
-    - **Animation**: Cấu hình loại hiệu ứng (Animation Type) và tỷ lệ thu phóng (Scale).
-- **Product Price**:
-    <div align="center" >
-        <img src="images/plugin/plugin_product_price.png" alt="Cấu hình hiển thị giá sản phẩm" />
-    </div>
-    
-    - **Price Range**: Chức năng ẩn khoảng giá (Min - Max price) của sản phẩm có biến thể.
-    - **Variation Price**: Hiển thị giá cụ thể của biến thể đã chọn.
-- **Extra Content**:
-    - **Hooks**: Hỗ trợ chèn nội dung (Text, Image, HTML) vào các vị trí Hook trên trang sản phẩm.
+Module tối ưu hiển thị các thành phần cốt lõi của trang sản phẩm đơn, được thiết kế tối ưu nhất cho theme **Flatsome**.
+
+### 2.1. Thẻ General
+* **Breadcrumbs**: Cho phép ẩn/hiện Breadcrumbs mặc định trên trang sản phẩm đơn.
+* **Quantity Width**: Điều chỉnh chiều rộng (width) của ô nhập số lượng sản phẩm.
+* **Button Size**: Tùy chỉnh kích thước nút trên trang sản phẩm đơn.
+
+<div align="center">
+    <img src="images/plugin/wc-enhancement-kit/single-product-general.png" alt="Cấu hình thẻ General" />
+</div>
+
+### 2.2. Nút Buy Now (Mua Ngay)
+<div align="center">
+    <img src="images/plugin/wc-enhancement-kit/plugin_buy_now_button.png" alt="Cấu hình nút Buy Now" />
+</div>
+
+* **Hiển thị**: 
+  * `Show on Single Product`: Hiện trên trang chi tiết sản phẩm.
+  * `Show on Product List`: Hiện trên các trang danh mục / trang lưu trữ.
+* **Button Text**: Nhãn nút hiển thị (Ví dụ: "Buy Now" hoặc "Mua Ngay").
+* **Button Position**: Vị trí hiển thị so với nút Add to Cart (Có 2 tùy chọn: *Trước nút Add to Cart* hoặc *Sau nút Add to Cart*).
+* **Button Redirect**: Trang đích khi click nút (Có thể chọn chuyển hướng đến **Checkout** hoặc **Cart**). Mặc định khuyến nghị là **Checkout**.
+* **Styling**: Các tùy chọn bên dưới cho phép cấu hình trực quan màu chữ, màu nền, hover color và đường viền của nút.
+
+### 2.3. Nút Add to Cart (Thêm Vào Giỏ Hàng)
+* **Hover Animation**: Tích hợp các hiệu ứng chuyển động vi mô khi di chuột vào nút (Khuyến nghị sử dụng kiểu **Scale** với giá trị **Animation Value: 1.05**).
+* **Buy Together**: Nếu trang sản phẩm có sử dụng phần "Mua cùng nhau" (Buy together), nút **Add all to cart** sẽ tự động được đồng bộ kiểu dáng và hiệu ứng theo nút Add to Cart chính này.
+
+<div align="center">
+    <img src="images/plugin/wc-enhancement-kit/single-product-ajax-add-to-cart.png" alt="Cấu hình nút Add to Cart" />
+</div>
+
+### 2.4. Hiển thị Giá sản phẩm (Product Price)
+<div align="center">
+    <img src="images/plugin/wc-enhancement-kit/plugin_product_price.png" alt="Cấu hình hiển thị giá sản phẩm" />
+</div>
+
+* **Price Range (Ẩn khoảng giá)**: Đối với sản phẩm có nhiều biến thể, plugin hỗ trợ ẩn khoảng giá mặc định của WooCommerce (`Min Price - Max Price`) và tự động thay thế bằng giá cụ thể của biến thể đang được chọn (Hiện hỗ trợ tốt nhất cho **Flatsome** và **Astra**).
+* **Custom Option (Vị trí tùy chỉnh)**: Có thể tùy biến chèn giá tại vị trí bất kỳ mong muốn thông qua hook nếu website sử dụng các plugin dựng layout khác.
+
+### 2.5. Nội dung Bổ sung (Extra Content)
+* **Hooks**: Cho phép chèn văn bản, mã HTML hoặc hình ảnh vào các vị trí hook tiêu chuẩn của WooCommerce trên trang sản phẩm đơn.
+* **Cách sử dụng**: Chọn loại nội dung (Type) và điền dữ liệu tương ứng. Nếu chọn loại **Image**, dán link ảnh; nếu chọn loại **Text**, nhập nội dung (Khuyến nghị sử dụng loại **HTML** kết hợp CSS nội dòng để dễ kiểm soát tính thẩm mỹ).
+
 ---
 
 ## 3. Hiển thị Biến thể (Variation Display)
-Module quản lý và tối ưu hóa trình chọn thuộc tính sản phẩm.
-<div align="center" >
-    <img src="images/plugin/plugin_variant_display.png" alt="Giao diện cấu hình Variation Display" />
-</div>
-
-- **Smart Default Variant**: Tự động chọn biến thể đầu tiên khi tải trang.
-- **Force Form Data Loading**: Kích hoạt cơ chế tải trước dữ liệu để tăng tốc độ phản hồi khi khách hàng chọn option.
-- **Hide Reset Link**: Ẩn liên kết "Clear/Xóa" mặc định của WooCommerce.
-- **Selected Swatch Style**: Tùy chỉnh màu sắc (Color/Background) cho trạng thái đang được chọn (Active state) của Swatch.
-<div align="center" >
-    <img src="images/plugin/plugin_variant_style.png" alt="Cấu hình Style cho Swatch" />
-</div>
-
----
-
-## 4. Tối ưu ảnh (WebP Conversion)
-Module chuyển đổi định dạng ảnh sang WebP để tối ưu tốc độ tải trang.
-Truy cập qua: **Settings > WC Enhancement Kit > WebP Conversion**
-
-
-- **Enable WebP Upload Conversion**: Hệ thống tự động chuyển đổi mọi ảnh upload sang `.webp`.
-- **WebP Quality**: Chất lượng ảnh WebP (%).
-- **Resize on Upload và Maximum Dimensions**:
-    - **Resize on Upload**: Tự động thay đổi kích thước ảnh gốc trước khi upload lên server.
-    - **Maximum Dimensions**: Thiết lập kích thước tối đa (Width x Height) mà ảnh gốc sẽ được resize về trước khi convert sang WebP. Các ảnh có kích thước lớn hơn sẽ được tự động giảm về ngưỡng này.
-- **Bulk Migration**:
-    - Chức năng quét và xử lý hàng loạt ảnh cũ chưa được tối ưu sang định dạng WebP.
-    - Convert ảnh ngay khi được bấm start với từng batch 20 ảnh.
-    <div align="center" >
-        <img src="images/plugin/plugin_convert_image_to_webp.png" alt="Giao diện Bulk Migration WebP" />
-    </div>
-
----
-
-## 5. Tab Sản phẩm (Product Tabs)
-Module mở rộng thông tin sản phẩm thông qua các tab tùy chỉnh.
-Truy cập qua: **Settings > WC Enhancement Kit > Product Tabs**
-
-- **Apply For**: Cấu hình phạm vi hiển thị (Toàn trang, Category, Brand hoặc Sản phẩm cụ thể).
-- **Tab Type**: Hỗ trợ loại `Default` (có sẵn) hoặc `Custom` (tự định nghĩa nội dung).
-- **Title**: Tiêu đề Tab.
-<div align="center" >
-    <img src="images/plugin/plugin_product_tab.png" alt="Cấu hình Product Tab" />
-</div>
-
----
-
-## 6. Trường nâng cao (Product Advanced Fields)
-Module cho phép tạo và quản lý các nhóm trường thông tin tùy chỉnh cho sản phẩm (ví dụ: SKU phụ, thông số kỹ thuật, ghi chú bảo hành).
-Truy cập qua: **Settings > WC Enhancement Kit > Product Advanced Fields**
-
-- **Quản lý danh sách**: Tổng quan các nhóm trường đã tạo và trạng thái hoạt động của chúng.
-<div align="center" >
-    <img src="images/plugin/plugin_product_advanced_field_list.png" alt="Danh sách Product Advanced Fields" />
-</div>
-
-### Cấu hình chi tiết (Advanced Field Settings)
-Khi tạo mới hoặc chỉnh sửa một nhóm trường, bạn cần thực hiện cấu hình qua 3 tab chính:
-
-1. **Group Setting**: Thiết lập tiêu đề cho nhóm trường và thứ tự hiển thị của nhóm trong trang chỉnh sửa sản phẩm.
-<div align="center" >
-    <img src="images/plugin/plugin_product_advanced_field_group_setting.png" alt="Cấu hình Group Setting" />
-</div>
-
-2. **Fields**: Định nghĩa các trường dữ liệu con bên trong nhóm (bao gồm: Tên trường - Label, Khóa định danh - Key, và các tùy chọn hiển thị).
-<div align="center" >
-    <img src="images/plugin/plugin_product_advanced_field_fields.png" alt="Cấu hình Fields" />
-</div>
-
-3. **Display Rule**: Thiết lập quy tắc hiển thị của nhóm trường (ví dụ: chỉ hiển thị cho một số danh mục sản phẩm cụ thể hoặc áp dụng cho toàn bộ cửa hàng).
-<div align="center" >
-    <img src="images/plugin/plugin_product_advanced_field_display_rule.png" alt="Cấu hình Display Rule" />
-</div>
----
-
-## 7. Bộ sưu tập (Collection)
-Tính năng tạo trang danh sách sản phẩm nâng cao với quy tắc lọc động.
-- **Truy cập**: Dashboard -> **Products** -> **Collection**.
-
-- **URL Slug**: Cấu hình đường dẫn tĩnh (mặc định: `/collections/`).
-- **Giao diện thêm mới**: Thêm mới các bộ sưu tập và tùy chỉnh giao diện.
-<div align="center" >
-    <img src="images/plugin/plugin_add_collection.png" alt="Giao diện thêm mới Collection" />
-</div>
-
-- **Giao diện quản lý**: Quản lý các bộ sưu tập.
+Module quản lý, định dạng lại URL biến thể và tối ưu hóa trình chọn thuộc tính (swatches).
 <div align="center">
-    <img src="images/plugin/plugin_list_collection.png" alt="Giao diện quản lý Collection" />
+    <img src="images/plugin/wc-enhancement-kit/plugin_variant_display.png" alt="Giao diện cấu hình Variation Display" />
 </div>
 
-- **Collection Fields**:
-    - **Media**: Thiết lập ảnh Thumbnail và Banner cho từng bộ sưu tập.
-    <div align="center" >
-        <img src="images/plugin/plugin_product_collection_image.png" alt="Giao diện quản lý Collection" />
-    </div>
-    
-    - **Filters**: Thiết lập tiêu chí lọc sản phẩm (Attribute, Title, Category, Tags, Brand, Product).
-    <div align="center" >
-        <img src="images/plugin/plugin_product_collection_filter.png" alt="Giao diện quản lý Collection" />
-    </div>
-
-- **Product Sorting**: Hỗ trợ sắp xếp thủ công (Manual drag-drop) thứ tự sản phẩm.
-    <div align="center" >
-        <img src="images/plugin/plugin_product_collection_sort_by.png" alt="Giao diện quản lý Collection" />
-    </div>
+* **Variant URL Query**: Tạo link liên kết trực tiếp tới từng biến thể sản phẩm thông qua tham số URL dưới dạng `?variant=variant_id`. 
+* **Force Form Data Loading**: Tự động tải trước toàn bộ dữ liệu biến thể ra form để tăng tốc độ phản hồi.
+* **Optimize Variation Data**: Tự động dọn dẹp và loại bỏ các dữ liệu dư thừa trong cấu trúc `variant-form` giúp giảm tải dung lượng HTML tải về.
+* **Hide Disabled Attributes (Khuyến nghị: KHÔNG NÊN BẬT)**: Tự động ẩn các giá trị thuộc tính không tạo thành biến thể hợp lệ. Việc này dễ gây hiểu lầm cho người dùng về các option sản phẩm hiện có.
+* **Smart Default Variant**: Tự động chọn (Active) sẵn biến thể đầu tiên khi khách hàng tải trang sản phẩm nếu sản phẩm đó chưa được cấu hình biến thể mặc định trong admin.
+* **Hide Reset Variations Link**: Ẩn liên kết "Clear/Xóa" mặc định của WooCommerce để giao diện trông gọn gàng, tinh giản hơn.
+* **Enable Dependent Flow (Kiểu Shopbase)**: Chuyển đổi luồng chọn thuộc tính thành dạng phụ thuộc tầng nấc giống như giao diện Shopbase.
+* **Selected Swatch Style**: Tùy chỉnh trực tiếp màu chữ (`Selected Swatch Text Color`) và màu nền (`Selected Swatch Background`) của swatch khi ở trạng thái được chọn (Active).
+<div align="center">
+    <img src="images/plugin/wc-enhancement-kit/plugin_variant_style.png" alt="Cấu hình Style cho Swatch" />
+</div>
 
 ---
 
-## 8. Công cụ Admin & Nhập liệu
-Tối ưu hóa quy trình quản trị và nâng cao tính bảo mật cho hệ thống backend.
-Truy cập qua **Settings > WC Enhancement Kit > Admin Utilities**.
+## 4. Tab Sản phẩm (Product Tabs)
+Giúp mở rộng trang sản phẩm bằng cách bổ sung thêm các tab thông tin có điều kiện (Như quy trình vận chuyển, chính sách đổi trả, bảng size...).
+<div align="center">
+    <img src="images/plugin/wc-enhancement-kit/plugin_product_tab.png" alt="Cấu hình Product Tab" />
+</div>
 
-### 8.1. Công cụ Quản trị (Admin Tools)
-- **Product Tags Filter**: Bổ sung bộ lọc theo thẻ (Tags) tại trang danh sách sản phẩm, hỗ trợ tìm kiếm và phân loại kho hàng nhanh chóng.
-- **SEO Quick View**: Tích hợp cột xem nhanh dữ liệu SEO (Title, Meta Description) trực tiếp tại danh sách sản phẩm mà không cần vào trang chỉnh sửa.
-<div align="center" >
-    <img src="images/plugin/plugin_admin_filter.png" alt="Bộ lọc Tag và SEO Quick View" />
+* **Apply For (Điều kiện áp dụng)**: Cấu hình linh hoạt phạm vi hiển thị tab dựa trên: **Product** (Sản phẩm cụ thể), **Category** (Danh mục), **Brand** (Thương hiệu), hoặc **Tags** (Thẻ sản phẩm).
+* **User Roles**: Cho phép cấu hình hiển thị tab đặc thù theo từng vai trò của người dùng (Ví dụ: Tab chính sách sỉ chỉ hiện cho tài khoản Wholesale).
+* **Type (Loại nội dung)**: Hỗ trợ loại tab có sẵn (`Description`, `Additional Information`, `Review`) hoặc loại tự định nghĩa nội dung (`Custom`).
+* **Title & Content**: Đặt tiêu đề hiển thị và soạn thảo nội dung (Hỗ trợ định dạng HTML phong phú).
+
+---
+
+## 5. Tùy chỉnh Thanh toán (Custom Checkout)
+> [!IMPORTANT]
+> **Khả năng tương thích**: Tính năng này chỉ hoạt động trên theme **Flatsome**. Nếu website sử dụng theme **WoodMart**, bạn **nên tắt hoàn toàn** thiết lập này (hoặc sử dụng các tính năng tối ưu checkout mặc định có sẵn của WoodMart) để tránh xung đột mã nguồn.
+
+Tính năng hỗ trợ dọn dẹp và tối ưu hóa biểu mẫu thanh toán ngoài trang Checkout giúp tăng tỷ lệ chuyển đổi đơn hàng.
+
+* **Đường dẫn**: Dashboard -> **Settings** -> **WC Enhancement Kit** -> **Custom Checkout**.
+* **Tính năng**: Cho phép bật/tắt (ẩn/hiện) và đặt bắt buộc (Required) hoặc không bắt buộc đối với các trường thông tin mặc định của WooCommerce như:
+  * Company Name (Tên công ty)
+  * Address Line 2 (Địa chỉ dòng 2)
+  * Phone Number (Số điện thoại)
+  * Postcode / ZIP (Mã bưu điện)
+  * State / County (Tỉnh thành/Quận huyện)
+
+---
+
+## 6. Bộ sưu tập (Collection)
+Tính năng nâng cao hỗ trợ gom nhóm sản phẩm tự động dựa trên các bộ lọc điều kiện động và quản lý sắp xếp thứ tự thủ công chuyên nghiệp.
+
+* **Truy cập**: Dashboard -> **Products** -> **Collection**.
+
+### 6.1. Lưu ý quan trọng về Đường dẫn tĩnh (Permalink Slug)
+> [!WARNING]
+> Slug mặc định được sử dụng cho taxonomy này là `collections`. Tuyệt đối không gán slug này cho bất kỳ danh mục, trang hay thành phần nào khác trong cấu hình **Settings -> Permalinks**.
+> 
+> Trường hợp truy cập trang bộ sưu tập ngoài giao diện gặp lỗi **404 Not Found**, hãy truy cập ngay vào **Settings -> Permalinks**, kiểm tra xem có xung đột slug hay không, rồi nhấn nút **Save Changes** để làm mới lại liên kết tĩnh của hệ thống.
+
+### 6.2. Tạo mới một Bộ sưu tập
+1. Vào mục **Collections**, điền thông tin cơ bản: **Name** (Tên bộ sưu tập), **Parent Collection** (Bộ sưu tập cha - nếu có), **Description** (Mô tả).
+2. **Media (Hình ảnh)**:
+   * `Thumbnail`: Ảnh đại diện của bộ sưu tập khi hiển thị trong danh sách chung (Collection List).
+   * `Banner`: Ảnh biểu ngữ kích thước lớn hiển thị ở đầu trang chi tiết của bộ sưu tập đó ngoài frontend.
+<div align="center">
+    <img src="images/plugin/wc-enhancement-kit/plugin_product_collection_image.png" alt="Giao diện quản lý hình ảnh Collection" />
+</div>
+
+3. **Bộ lọc điều kiện (Filters)**:
+   * Thiết lập quy tắc tự động thêm sản phẩm vào bộ sưu tập dựa trên: **Attribute** (Thuộc tính), **Title** (Tiêu đề sản phẩm), **Category** (Danh mục), **Tags** (Thẻ), hoặc **Brand** (Thương hiệu).
+   * **Lưu ý quy tắc OR với Tiêu đề (Title)**: Khi lọc theo tiêu đề, các từ khóa phân tách bằng dấu phẩy `,` sẽ được hệ thống hiểu theo điều kiện HOẶC (Ví dụ: `Man, Woman` nghĩa là lấy sản phẩm có tiêu đề chứa từ "Man" **HOẶC** chứa từ "Woman").
+<div align="center">
+    <img src="images/plugin/wc-enhancement-kit/plugin_product_collection_filter.png" alt="Giao diện cấu hình bộ lọc điều kiện" />
+</div>
+
+4. **Thứ tự sắp xếp sản phẩm (Product Sorting)**:
+   * Cung cấp các chế độ sắp xếp tự động: *Default, Product title A-Z, Product title Z-A, Highest price, Lowest price, Newest, Oldest*.
+   * **Sắp xếp thủ công (Manual sorting)**:
+     * Chọn tùy chọn **Manual**, sau đó nhấn **Reload Preview** để tải danh sách sản phẩm hiện có.
+     * Sử dụng chuột để kéo thả (drag-and-drop) sắp xếp thứ tự hiển thị của từng sản phẩm.
+     * Để thao tác nhanh hàng loạt, sử dụng checkbox chọn nhiều sản phẩm cùng lúc rồi dùng nút lệnh di chuyển nhanh: **Move to top** (Lên đầu), **Move to bottom** (Xuống cuối), hoặc **Move to position** (Chuyển tới vị trí số X).
+<div align="center">
+    <img src="images/plugin/wc-enhancement-kit/plugin_product_collection_sort_by.png" alt="Giao diện quản lý thứ tự sản phẩm thủ công" />
+</div>
+
+### 6.3. Tích hợp hiển thị bộ sưu tập ngoài Giao diện
+* **Flatsome (UX Builder)**: Plugin tự động tích hợp các element chuyên dụng vào UX Builder giúp dễ dàng kéo thả hiển thị danh sách sản phẩm theo Bộ sưu tập (Tương tự như cách gọi danh mục thông thường).
+* **Woodmart (Elementor)**: Sử dụng widget **Product (grid/carousel)** của Woodmart hoặc các widget tương ứng của Elementor, chọn nguồn dữ liệu (Data Source) là **Collection** để hiển thị sản phẩm mong muốn.
+
+### 6.4. Cơ chế đồng bộ sản phẩm vào Collection (Collection Sync)
+Hệ thống đồng bộ hóa sản phẩm vào bộ sưu tập theo các cơ chế sau để đảm bảo tính chính xác và tối ưu hiệu năng máy chủ:
+* **Đồng bộ thời gian thực (Event-driven)**: Tự động chạy ngay khi thực hiện thêm mới hoặc chỉnh sửa/cập nhật một sản phẩm bất kỳ.
+* **Đồng bộ sau khi Import**: Tự động kích hoạt ngay sau khi tiến trình nhập dữ liệu (Import) sản phẩm kết thúc thành công.
+* **Đồng bộ tự động định kỳ (Cron Job)**: Chạy tự động đồng bộ lại toàn bộ các bộ sưu tập vào lúc **2:00 AM giờ UTC** hàng ngày. Tính năng này có thể được chủ động Bật hoặc Tắt linh hoạt trong phần cấu hình quản trị (Xem chi tiết hướng dẫn tại [Cài đặt Đồng bộ Bộ sưu tập](#81-hỗ-trợ-trang-quản-trị-admin-tools)).
+* **Đồng bộ thủ công tức thì (Manual Sync)**: Kích hoạt đồng bộ hóa toàn bộ các bộ sưu tập ngay lập tức bằng nút bấm hành động thủ công khi cần cập nhật giao diện ngoài frontend ngay tức thì (Xem chi tiết hướng dẫn tại [Cài đặt Đồng bộ Bộ sưu tập](#81-hỗ-trợ-trang-quản-trị-admin-tools)).
+* **Ghi log**: Tất cả nhật ký đồng bộ chi tiết được ghi nhận tại đường dẫn: **WooCommerce -> Status -> Logs** -> tìm file log có tiền tố `wcek-collection-sync`.
+
+---
+
+## 7. Phân trang (Pagination)
+> [!IMPORTANT]
+> **Khả năng tương thích**: Tính năng này chỉ hoạt động trên theme **Flatsome**. Nếu website đang sử dụng theme **WoodMart**, bạn **nên tắt hoàn toàn** tính năng Phân trang này để tránh làm vỡ định dạng phân trang mặc định và tinh tế của WoodMart.
+
+Cho phép làm đẹp và cá nhân hóa thiết kế nút phân trang tại các trang danh mục sản phẩm (Archive / Shop Pages).
+
+* **Đường dẫn**: Dashboard -> **Settings** -> **WC Enhancement Kit** -> **Pagination**.
+* **Cấu hình giao diện**:
+  * `Active Item Background`: Màu nền của nút trang hiện tại.
+  * `Active Item Text Color`: Màu chữ của nút trang hiện tại.
+  * `Border Radius`: Bo góc nút phân trang. Sử dụng đơn vị `px` để tạo nút hình vuông bo nhẹ góc (Ví dụ: `4px`), hoặc nhập tỷ lệ phần trăm `%` (Ví dụ: `50%`) để hiển thị nút dạng hình tròn hoàn hảo.
+
+---
+
+## 8. Công cụ Admin & Bảo mật (Admin Utilities)
+Nhóm tính năng hỗ trợ tinh chỉnh trang quản trị backend, bảo mật hệ thống WordPress và dọn dẹp dữ liệu lớn tránh timeout.
+
+<div align="center">
+    <img src="images/plugin/wc-enhancement-kit/plugin_admin_filter.png" alt="Bộ lọc Tag và SEO Quick View" />
+</div>
+
+### 8.1. Hỗ trợ trang Quản trị (Admin Tools)
+* **Product Tag Filter**: Bổ sung bộ lọc nhanh theo Thẻ (Tag) ngay tại đầu bảng danh sách tất cả sản phẩm, giúp admin lọc và tìm kiếm kho hàng tiện lợi.
+* **SEO Quick View**: Tích hợp một cột hiển thị trạng thái SEO (Thẻ Title, Meta Description) trực tiếp tại danh sách sản phẩm. Khi click vào sẽ hiển thị một cửa sổ bật lên (popup) tóm tắt thông tin SEO của sản phẩm đó mà không cần truy cập vào trang chỉnh sửa chi tiết.
+* **Enable Horizontal Scrolling**: Tự động sửa lỗi CSS hiển thị bảng danh sách sản phẩm của WooCommerce trên màn hình nhỏ, bổ sung thanh cuộn ngang để bảng không bị méo mó hay vỡ giao diện khi kích hoạt nhiều cột thông tin.
+* **Collection Sync Setting (Cài đặt Đồng bộ Bộ sưu tập)**: Tích hợp công cụ quản lý đồng bộ các Collection sản phẩm giúp tối ưu hiệu năng máy chủ và dữ liệu:
+  * **Hộp chọn Bật/Tắt Cron Job**: Checkbox cho phép kích hoạt hoặc vô hiệu hóa lịch chạy tự động ngầm (**Cron Job**) vào lúc **2:00 giờ sáng UTC**. Việc này giúp khống chế tác vụ đồng bộ chỉ chạy vào khung giờ thấp điểm ít khách truy cập, tránh việc hệ thống liên tục chạy đồng bộ tự động trong ngày gây quá tải CPU/RAM của server.
+  * **Nút bấm Sync All Now**: Cho phép kích hoạt đồng bộ hóa toàn bộ các Collection ngay lập tức một cách thủ công, cực kỳ hữu dụng khi bạn vừa cập nhật hàng loạt sản phẩm mới và muốn cập nhật hiển thị ngoài frontend ngay lập tức.
+
+<div align="center">
+    <img src="images/plugin/wc-enhancement-kit/collection-sync-setting.png" alt="Cấu hình Collection Sync Setting" />
 </div>
 
 ### 8.2. Bảo mật hệ thống (Admin Security)
-Cung cấp các lớp bảo mật bổ sung để bảo vệ website khỏi các cuộc tấn công phổ biến:
-- **XML-RPC & REST API**: Vô hiệu hóa các giao thức truy cập từ xa không cần thiết để chặn tấn công Brute Force.
-- **Hide System Info**: Loại bỏ Generator Meta Tag để ẩn phiên bản WordPress đang sử dụng.
-- **User Privacy**: Chặn việc dò tìm Username qua REST API và vô hiệu hóa trang lưu trữ tác giả (Author Archives).
-<div align="center" >
-    <img src="images/plugin/plugin_admin_serurity.png" alt="Các thiết lập bảo mật Admin Security" />
+Cung cấp các thiết lập bảo mật cấp WordPress để hạn chế các cuộc tấn công quét thông tin:
+<div align="center">
+    <img src="images/plugin/wc-enhancement-kit/plugin_admin_serurity.png" alt="Các thiết lập bảo mật Admin Security" />
 </div>
 
-### 8.3. Trình nhập liệu sản phẩm (Product Importer)
-- **Đa định dạng**: Hỗ trợ nhập liệu linh hoạt từ Shopbase CSV và WooCommerce chuẩn CSV.
-- **Cơ chế Auto-recovery**: Tự động khôi phục và tiếp tục quy trình nhập liệu nếu xảy ra sự cố gián đoạn kết nối, đảm bảo dữ liệu không bị trùng lặp hoặc bỏ sót.
+* **Ẩn XML-RPC & REST API**: Vô hiệu hóa giao thức XML-RPC và chặn các truy cập REST API không cần thiết nhằm ngăn chặn tấn công dò mật khẩu (Brute Force).
+* **Block PayPal simulate-cart**: Chặn truy cập vào API `simulate-cart` của plugin PayPal mặc định để chống spam đơn hàng ảo.
+* **Chặn dò tìm Username**: Vô hiệu hóa endpoint `/wp/v2/users` trong REST API nhằm ngăn chặn hacker thu thập danh sách tài khoản quản trị.
+* **Author Archives 404**: Trả về mã lỗi 404 (Không tìm thấy trang) nếu người dùng không có quyền quản trị cố gắng truy cập trang lưu trữ của tác giả bài viết.
+* **Chặn đăng nhập bằng mật khẩu thường (Lưu ý quan trọng)**:
+  > [!CAUTION]
+  > Tuyệt đối **không bật** tùy chọn chặn đăng nhập bằng username/mật khẩu trừ khi website của bạn đã cấu hình thành công một phương thức đăng nhập thay thế an sau qua bên thứ ba (Ví dụ: Đăng nhập bằng tài khoản Google, Firebase, OTP...).
+
+### 8.3. Thao tác xóa nhanh hàng loạt (Bulk Actions)
+* **Vấn đề**: Khi làm việc với kho dữ liệu lớn, việc chuyển hàng trăm sản phẩm vào thùng rác hoặc xóa vĩnh viễn bằng công cụ mặc định của WooCommerce rất dễ gây lỗi cạn kiệt bộ nhớ hoặc timeout của server.
+* **Giải pháp**: Plugin bổ sung hai bộ lọc hành động tùy biến siêu nhẹ: **Move to trash** (Đưa vào thùng rác) và **Delete permanently** (Xóa vĩnh viễn). Cơ chế xử lý đã được tối ưu hóa để chạy nền mượt mà, phân mảng thông minh giúp tránh nghẽn server.
+* **Ghi nhật ký**: Toàn bộ quá trình xóa được ghi chi tiết tại log: **WooCommerce -> Status -> Logs** -> file `wcek-bulk-actions`.
 
 ---
 
+## 9. Trình nhập liệu sản phẩm (Product Importer)
+Công cụ nhập dữ liệu sản phẩm hiệu năng cao, hỗ trợ định dạng CSV từ Shopbase và WooCommerce tiêu chuẩn.
+
+> [!NOTE]
+> **Phương án dự phòng**: Trình nhập liệu tích hợp này chỉ đóng vai trò làm **phương án dự phòng và chỉ nên dùng để nhập các tệp tin có số lượng sản phẩm nhỏ**. Để đảm bảo độ ổn định, tránh timeout và đạt hiệu suất đồng bộ dữ liệu lớn tốt nhất, vui lòng liên hệ **team Tech** để được hướng dẫn, cài đặt và sử dụng plugin import chính thức của hệ thống.
+
+> [!WARNING]
+> Nếu website của bạn đang cài đặt và kích hoạt plugin tăng tốc **WP Rocket**, bắt buộc phải **TẮT (Disable)** tạm thời plugin này trước khi chạy tiến trình Import sản phẩm để tránh xảy ra xung đột bộ đệm và lỗi xử lý dữ liệu.
+
+* **Cách sử dụng**: Vào mục Product Importer, chọn đúng định dạng file mẫu (Shopbase hoặc WooCommerce), tải tệp CSV lên (Hỗ trợ tải lên nhiều tệp cùng lúc để xử lý xếp hàng) và nhấn bắt đầu.
+* **Cơ chế Hủy bỏ (Cancel)**: Có thể click **Cancel Import** bất cứ lúc nào để dừng luồng xử lý hiện tại.
+* **Cơ chế Tự khôi phục & Tiếp tục (Resume & Auto-recovery)**:
+  * Trong trường hợp máy chủ bị mất kết nối internet giữa chừng, mất nguồn hoặc nghẽn, hệ thống có tính năng khóa luồng song song để ngăn chặn việc chạy đè dữ liệu.
+  * Khi kết nối ổn định lại, truy cập trang Importer, hệ thống sẽ hiển thị thông báo khôi phục tự động: *"Auto-recovering from interrupted job..."*.
+  * Admin có thể chọn **Resume** để hệ thống tiếp tục đọc CSV từ dòng bị gián đoạn, hoặc chọn **Discard** để hủy bỏ hoàn toàn phiên làm việc lỗi đó.
+  * **Mẹo xử lý sự cố kẹt tiến trình (Troubleshooting)**: 
+    Nếu tiến trình tự động khôi phục bị kẹt cứng và không chạy tiếp, hãy làm theo quy trình sau:
+    1. Truy cập vào menu quản trị: **Tools -> Scheduled Actions** (hoặc WooCommerce -> Status -> Scheduled Actions).
+    2. Tìm trong tab **Processing** và **Pending** xem có tồn tại 2 Jobs bị trùng lặp cùng có chứa đối số (Arguments) dạng `'import_id' => 'wcek_id'` hay không.
+    3. Thực hiện **Xóa (Delete)** tiến trình bị kẹt đang nằm trong trạng thái **Processing**. Ngay sau đó, tiến trình nằm trong danh sách chờ **Pending** sẽ tự động được kích hoạt và chạy tiếp tục tác vụ nhập liệu bình thường mà không bị trùng lặp dữ liệu sản phẩm.
+* **Nhật ký tiến trình**: Xem log chi tiết tại **WooCommerce -> Status -> Logs** -> file `wcek-importer`.
+
+---
+
+## 10. Trình dán ảnh (Image Attacher)
+Công cụ hỗ trợ tải và đính kèm nhanh hình ảnh vào thư viện Media của WordPress thông qua danh sách liên kết (URL) hình ảnh trực tuyến mà không cần tải về máy tính rồi upload thủ công.
+
+* **Đường dẫn**: Dashboard -> **Media** -> **Upload via Link**.
+
+<div align="center">
+    <img src="images/plugin/wc-enhancement-kit/upload-via-link.png" alt="Giao diện Upload via Link" />
+</div>
+
+* **Cách thực hiện**:
+  1. Nhập hoặc dán danh sách các đường dẫn (URL) ảnh trực tuyến vào ô nhập liệu lớn. **Lưu ý**: Mỗi một URL hình ảnh phải nằm trên một dòng riêng biệt (**mỗi 1 URL là 1 dòng**).
+  2. Click nút **Import Images** để hệ thống tự động tải các ảnh này về server nền và đồng bộ vào thư viện Media mặc định của WordPress.
+* **Lưu ý**:
+  > [!IMPORTANT]
+  > Không sử dụng chức năng này để tải lên các tài nguyên ảnh hệ thống quan trọng như logo chính, favicon của website. Chức năng này chỉ phù hợp để chuẩn bị nhanh ảnh mô tả hoặc ảnh gallery cho sản phẩm hàng loạt.
