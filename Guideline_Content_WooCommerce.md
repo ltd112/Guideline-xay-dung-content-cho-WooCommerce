@@ -66,4 +66,8 @@ Hệ thống sử dụng module WebP thuộc plugin **WC Enhancement Kit** để
     <div align="center">
         <img src="images/sort_terms.png" alt="sort_terms.png" />
     </div>
-4. WooCommerce sẽ tự động lưu thứ tự sau khi bạn kéo thả.
+4. WooCommerce sẽ tự động lưu thứ tự sau khi bạn kéo thả. Kết quả sau khi sắp xếp:
+
+    <div align="center">
+        <img src="images/after_sort_terms.png" alt="after_sort_terms.png" />
+    </div>
