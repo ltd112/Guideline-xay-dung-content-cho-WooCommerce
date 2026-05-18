@@ -46,7 +46,24 @@ Hệ thống sử dụng module WebP thuộc plugin **WC Enhancement Kit** để
 1. **Auto Conversion**: Tự động chuyển đổi và tối ưu hóa hình ảnh ngay khi upload vào Media Library.
 2. **Bulk Migration**: Tính năng chuyển đổi hàng loạt cho các tài nguyên cũ:
    - **Đường dẫn**: Dashboard -> **Settings** -> **WC Enhancement Kit**.
-   - **Thực hiện**: Tại card **WebP Conversion**, chọn **Start bulk migration** để kích hoạt quy trình quét toàn bộ thư viện.
+   - **Thực hiện**: Tại card **WebP Conversion**, chọn **Start bulk convert** để kích hoạt quy trình quét toàn bộ thư viện.
    <div align="center">
        <img src="images/convert_image_to_webp.png" alt="convert_image_to_webp.png" />
    </div>
+
+---
+
+## 4. Quy chuẩn Cấu hình Thuộc tính Sản phẩm (Product Attributes)
+Để đảm bảo trải nghiệm người dùng tốt nhất khi chọn các biến thể sản phẩm (ví dụ: Kích thước - Größe), cần sắp xếp thứ tự hiển thị của các giá trị thuộc tính một cách logic (thủ công).
+
+**Cách thực hiện:**
+1. Truy cập vào trang quản trị WordPress, chọn **Products** -> **Attributes**.
+2. Tìm thuộc tính cần chỉnh sửa (ví dụ: Größe), nhấn vào **Configure terms**.
+    <div align="center">
+        <img src="images/product_attribute.png" alt="product_attribute.png" />
+    </div>
+3. Tại đây, bạn có thể kéo và thả các giá trị để sắp xếp lại thứ tự cho đúng chuẩn. **Lưu ý quan trọng**: Mặc định khi import, hệ thống sẽ sắp xếp số đứng trước chữ nên `2XL` sẽ tự động đứng trước `XL`. Bạn cần kéo thả thủ công để đưa `XL` lên trước `2XL` (thứ tự đúng chuẩn: **ví dụ**: `S` -> `M` -> `L` -> `XL` -> `2XL`).
+    <div align="center">
+        <img src="images/sort_terms.png" alt="sort_terms.png" />
+    </div>
+4. WooCommerce sẽ tự động lưu thứ tự sau khi bạn kéo thả.
