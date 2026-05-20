@@ -107,6 +107,54 @@ Truy cập plugin thông qua **Settings -> WC Enhancement Kit**.
 
 ---
 
-## 6. Tài liệu tham khảo
+## 6. Giải pháp Tối ưu Menu quá dài bằng Mega Menu trong Woodmart
+
+Khi cấu trúc điều hướng danh mục quá dài, việc hiển thị bằng menu dọc thả xuống thông thường (Standard Dropdown) trên Desktop sẽ gây ra lỗi khuất hoặc tràn giao diện theo chiều dọc trên các màn hình có chiều cao thấp:
+
+<div align="center" >
+    <img src="images/woodmart/issue_menu.png" alt="Lỗi hiển thị giao diện do danh sách menu quá dài" ></img>
+</div>
+
+Để tối ưu, quy trình kỹ thuật chuẩn yêu cầu tách biệt hệ thống thành 2 menu riêng biệt:
+
+### 6.1. Quy trình tách biệt hệ thống Menu
+1. **Menu dành cho Mobile (Mobile Menu)**:
+    - **Cách làm**: Khởi tạo một menu độc lập gán cho vị trí hiển thị di động.
+    - **Cấu trúc**: Thiết lập cấu trúc phân cấp cây thư mục truyền thống dạng **Item -> Sub-item** (xếp dọc lồng nhau).
+    - **Đặc tính kỹ thuật**: Tương thích tốt với thao tác cuộn dọc (Scroll) trên thiết bị di động.
+
+2. **Menu dành cho Desktop (Desktop Menu)**:
+    - **Cách làm**: Khởi tạo một menu riêng hiển thị trên Desktop và sử dụng giải pháp **HTML Blocks** kết hợp **Elementor** để làm Mega Menu.
+    - **Đặc tính kỹ thuật**: Sử dụng bố cục dàn ngang để tận dụng chiều rộng màn hình, triệt tiêu lỗi hiển thị theo chiều dọc.
+
+---
+
+### 6.2. Các bước cấu hình Mega Menu trên Desktop bằng HTML Blocks
+
+- **Bước 1 (Thiết kế nội dung bằng HTML Blocks & Elementor)**:
+    - Truy cập **Dashboard -> HTML Blocks -> Add New** (Thêm Block mới) để tạo khối nội dung, đặt tên dễ nhận biết (ví dụ: *Mega Menu Shop*) và nhấn **Edit with Elementor** để bắt đầu thiết kế chi tiết:
+        - **Dựng cấu trúc Container & phân cột**: Thêm một Container cha chính, bên trong tạo các Container con tương ứng với số cột mong muốn (ví dụ: chia thành 3, 4 hoặc 5 cột dọc để chứa các danh mục khác nhau).
+        - **Sử dụng widget Extra Menu list**: Tìm và kéo thả element/widget **Extra Menu list** (widget gốc của Woodmart dùng để tạo danh sách menu tùy chỉnh) vào từng Container cột vừa tạo.
+        - **Cấu hình chi tiết cho từng Menu Item**: Trong bảng cài đặt của widget **Extra Menu list**, tiến hành điền đầy đủ các thông tin **Label** (tên hiển thị), **Link** (đường dẫn đích), và **Icon** (icon hoặc ảnh SVG đại diện).
+    <div align="center" >
+        <img src="images/woodmart/edit_menu_in_elementor.png" alt="Thiết kế cấu hình Mega Menu bằng Elementor" ></img>
+    </div>
+- **Bước 2 (Gán vào Menu hệ thống)**:
+    - Truy cập **Dashboard -> Appearance -> Menus**, chọn Menu chính hiển thị trên Desktop.
+    - Tìm và nhấp vào mục cha (Parent item) muốn gán Mega Menu để mở bảng cấu hình:
+        - Thiết lập tùy chọn **Design** thành **Set sizes** (hoặc Full Width/Custom size).
+        - Tại mục chọn block dropdown, tìm và chọn đúng **HTML Block** đã thiết kế ở Bước 1 để hiển thị thay thế cho menu thả xuống mặc định.
+    <div align="center" >
+        <img src="images/woodmart/edit_menu_in_appearance.png" alt="Gán HTML Block vào WordPress Menu" ></img>
+    </div>
+- **Kết quả hiển thị ngoài Frontend**:
+    Sau khi cấu hình thành công, giao diện Mega Menu sẽ hiển thị trên Desktop theo đúng bố cục được thiết kế:
+    <div align="center" >
+        <img src="images/woodmart/result_mega_menu.png" alt="Kết quả hiển thị Mega Menu ngoài Frontend" ></img>
+    </div>
+
+---
+
+## 7. Tài liệu tham khảo
 - [Woodmart Documentation](https://xtemos.com/documentation/woodmart/)
 - [Công cụ kiểm tra độ tương phản](https://webaim.org/resources/contrastchecker/)
