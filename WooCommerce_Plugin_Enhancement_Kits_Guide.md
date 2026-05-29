@@ -458,6 +458,7 @@ Các tùy chọn cấu hình bao gồm:
 * **Size Attributes (Vị trí hiển thị)**:
   * Chọn các thuộc tính đại diện cho kích thước. 
   * *Mặc định*: Nếu không chọn thuộc tính nào, danh sách mặc định sau sẽ được áp dụng: `Size (pa_size)`, `Sizes (pa_sizes)`, `Grosse (pa_grosse)`, `Taille (pa_taille)`, `Tamano (pa_tamano)`, `Tamanho (pa_tamanho)`.
+  * *Lưu ý*: Nếu sản phẩm chứa nhiều hơn một thuộc tính nằm trong danh sách được chọn này, hệ thống sẽ ưu tiên hiển thị liên kết bảng size theo thuộc tính kích thước `Size (pa_size)`. Trường hợp sản phẩm không chứa thuộc tính `pa_size` thì sẽ hiển thị tại thuộc tính đầu tiên khớp trong danh sách mà sản phẩm có.
   * **Cơ chế hiển thị trên giao diện (Frontend Display)**:
     * **Cách 1 - Hiển thị phía trên Label của thuộc tính size**: Áp dụng khi sản phẩm có chứa thuộc tính nằm trong danh sách Size Attributes được cấu hình hoặc mặc định.
       <div align="center">
