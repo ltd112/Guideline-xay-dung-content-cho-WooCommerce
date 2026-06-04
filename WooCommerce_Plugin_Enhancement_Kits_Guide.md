@@ -19,6 +19,7 @@
 10. [**Trình dán ảnh (Image Attacher)**](#10-trình-dán-ảnh-image-attacher) - Tải ảnh hàng loạt thông qua liên kết từ xa không lưu trữ.
 11. [**Tối ưu hình ảnh WebP (WebP Conversion)**](#11-tối-ưu-hình-ảnh-webp-webp-conversion) - Tự động chuyển đổi sang WebP khi tải lên và tối ưu hóa hàng loạt.
 12. [**Bảng size (Size Charts)**](#12-bảng-size-size-charts) - Quản lý bảng kích thước dạng popup theo sản phẩm, gán động theo Product Type hoặc gán hàng loạt qua Product Tag.
+13. [**Hóa đơn Khách hàng (Customer Invoice)**](#13-hóa-đơn-khách-hàng-customer-invoice) - Cung cấp trang hóa đơn công khai truy cập qua URL bảo mật (không cần đăng nhập) tích hợp trạng thái đơn hàng.
 
 
 ---
@@ -472,6 +473,74 @@ Các tùy chọn cấu hình bao gồm:
 <div align="center">
     <img src="images/plugin/wc-enhancement-kit/size-charts/setting-size-chart.png" alt="Giao diện cấu hình cài đặt chung Size Charts" />
 </div>
+
+---
+
+## 13. Hóa đơn Khách hàng (Customer Invoice)
+
+Module **Customer Invoice** tạo một trang hóa đơn công khai (public-facing invoice page) cho phép người dùng truy cập trực tiếp qua URL bảo mật để xem chi tiết đơn hàng và hành trình vận chuyển mà không cần đăng nhập tài khoản.
+
+### 13.1. Cơ chế Hoạt động & Bảo mật
+* **Định danh bằng Order Key**: URL hóa đơn được sinh dựa trên mã khóa đơn hàng gốc của WooCommerce (`order_key`) để định danh và bảo mật truy cập:
+  `{site_url}/orders/customer-invoice/{order_key}`
+  *(Ví dụ: `https://yourstore.com/orders/customer-invoice/wc_order_abc123xyz`)*
+* **Truy cập trực tiếp**: Khách hàng truy cập thông tin đơn hàng thông qua liên kết (gửi qua email, tin nhắn hoặc hệ thống thông báo) mà không cần xác thực tài khoản.
+* **HPOS & Legacy Compatible**: Tương thích với hệ thống lưu trữ dữ liệu đơn hàng mới của WooCommerce (High-Performance Order Storage - HPOS) và kiểu lưu trữ truyền thống (Post tables).
+
+### 13.2. Cấu trúc và Giao diện của Trang Hóa đơn (Frontend)
+Trang hóa đơn sử dụng template độc lập (standalone full-page template), không tải các file header/footer của theme đang kích hoạt để tối ưu hóa hiển thị:
+1. **Header**: Hiển thị logo cửa hàng (truy xuất từ thiết lập `site_logo` của theme hoặc `custom_logo` của WordPress core; nếu trống sẽ hiển thị tên website dưới dạng văn bản) kèm theo ảnh huy hiệu (Trust Badges).
+2. **Tiêu đề**: Hiển thị tiêu đề cảm ơn, số đơn hàng (order number) và ngày tạo đơn.
+3. **Khối thông tin đơn hàng (Information Card)**: Hiển thị các thông tin:
+   * Địa chỉ giao hàng (Shipping address - nếu trống sẽ tự động lấy Địa chỉ thanh toán).
+   * Địa chỉ thanh toán (Billing address).
+   * Phương thức vận chuyển (Shipping method).
+   * Phương thức thanh toán (Payment method).
+4. **Hành trình Đơn hàng (Order Status Timeline)**:
+   * **Trạng thái đặc biệt**: Nếu đơn hàng có trạng thái là hủy (`cancelled`), đã hoàn tiền (`refunded`), hoặc thất bại (`failed`), giao diện hiển thị nhãn trạng thái tương ứng thay vì hiển thị timeline.
+   * **Sơ đồ timeline**: Đối với các trạng thái thông thường, hành trình đơn hàng hiển thị qua 3 mốc:
+     * **Bước 1: Order placed**: Áp dụng khi đơn hàng có trạng thái `pending` hoặc `on-hold`. Ngày hiển thị lấy từ ngày tạo đơn hàng.
+     * **Bước 2: In process**: Áp dụng khi đơn hàng có trạng thái `processing`, `shipped`, hoặc `in-transit`.
+     * **Bước 3: Shipped**: Áp dụng khi đơn hàng có trạng thái `completed` hoặc `delivered`.
+   * **Truy xuất ngày tự động**: Ngày hoàn thành của mỗi bước được hệ thống tự động lọc từ nhật ký ghi chú nội bộ của đơn hàng (internal order notes) khi đơn hàng được cập nhật trạng thái tương ứng.
+5. **Khối tóm tắt đơn hàng (Order Summary - Sidebar)**:
+   * Danh sách sản phẩm kèm ảnh đại diện thu nhỏ (thumbnail) và số lượng.
+   * Tên sản phẩm chứa liên kết dẫn về URL của sản phẩm trên website.
+   * Các thuộc tính biến thể (kích thước, màu sắc...) hoặc metadata đi kèm của sản phẩm.
+   * Chi tiết tính toán: Tạm tính (Subtotal), Chiết khấu (Discount), Phí vận chuyển (Shipping), Thuế (Tax), và Tổng thanh toán (Total).
+6. **Chính sách giao hàng (Delivery Policies)**: Hiển thị nội dung chính sách vận chuyển do quản trị viên thiết lập ở cột bên phải.
+7. **Nút hành động (CTA Buttons)**:
+   * Nút **Contact us**: Liên kết đến trang liên hệ được chỉ định.
+   * Nút **Continue shopping**: Liên kết đến trang cửa hàng (Shop page) hoặc trang tùy chọn được thiết lập.
+8. **Liên kết chân trang (Footer Links)**: Các đường dẫn đến các trang pháp lý: *Refund policy, Shipping policy, Terms of service, Privacy policy, DMCA*.
+
+---
+
+### 13.3. Hướng dẫn Cấu hình cho Quản trị viên (Admin Settings)
+
+Thiết lập giao diện và liên kết cho trang hóa đơn trong trang quản trị:
+
+* **Đường dẫn truy cập**: Dashboard -> **Enhancement Kit** -> chọn tab **Customer Invoice** (hoặc `Dashboard -> WC Enhancement Kit` -> chọn tab **Customer Invoice**).
+
+Tại đây, quản trị viên có thể cấu hình các thông số sau:
+
+#### 1. Nhãn hiệu & Màu sắc (Branding)
+* **Primary Color**: Thiết lập mã màu chủ đạo cho trang hóa đơn (áp dụng cho nút "Continue shopping", các bước đã hoàn thành trên timeline và các chi tiết giao diện khác).
+
+#### 2. Các liên kết trang (Page Links)
+Chọn trang từ danh sách trang hiện có trên website để liên kết với các mục trên hóa đơn:
+* **Contact Us Page**: Trang liên hệ hỗ trợ.
+* **Continue Shopping Page**: Trang chuyển hướng khi nhấn "Continue shopping" (mặc định sẽ là trang Shop nếu để trống).
+* **Refund Policy Page**: Trang chính sách hoàn tiền ở footer.
+* **Shipping Policy Page**: Trang chính sách vận chuyển ở footer.
+* **Terms of Service Page**: Trang điều khoản dịch vụ ở footer.
+* **Privacy Policy Page**: Trang chính sách bảo mật ở footer.
+* **DMCA Page**: Trang chính sách DMCA ở footer.
+
+#### 3. Chính sách giao hàng (Delivery Policies)
+* Cấu hình nội dung hiển thị trong mục **DELIVERY POLICIES** ở sidebar bằng trình soạn thảo trực quan (WYSIWYG Editor), hỗ trợ văn bản định dạng và mã HTML.
+
+*Nhấn **Save Settings** để lưu cấu hình.*
 
 
 
