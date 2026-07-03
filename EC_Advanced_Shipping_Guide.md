@@ -51,9 +51,28 @@ Mỗi mức phí (Rate) được cấu hình có thể áp dụng các bộ lọ
 
 ## 3. Phân nhóm & Chiến lược Tính Phí (Group Logic & Strategies)
 
-Khi có nhiều mức phí vận chuyển cùng thỏa mãn các điều kiện của giỏ hàng, gộp chúng vào cùng một **Group** để áp dụng chiến lược kết hợp phí:
+Khi có nhiều mức phí vận chuyển cùng thỏa mãn các điều kiện của giỏ hàng, gộp chúng vào cùng một **Group** (phân nhóm) để áp dụng chiến lược kết hợp phí. Có thể định cấu hình riêng biệt cho từng nhóm thông qua nút **Group settings** tại trang quản lý các item base rate.
 
-- **Highest (Phí cao nhất - Mặc định)**: Lấy mức phí có giá trị cao nhất trong nhóm.
+### 3.1. Các cách hiển thị phần phí vận chuyển trong item base rate (Strategies)
+Plugin hỗ trợ 4 cách hiển thị phí vận chuyển cho mỗi nhóm:
+
+- **Highest cost (Phí cao nhất - Mặc định)**: Chọn mức phí vận chuyển có giá trị lớn nhất trong nhóm.
+- **Lowest cost (Phí thấp nhất)**: Chọn mức phí vận chuyển có giá trị nhỏ nhất trong nhóm.
+- **Longest shipping time (Thời gian giao hàng lâu nhất)**: Chọn mức phí có thời gian giao hàng (`shipping_time_to`) lâu nhất.
+  - *Fallback*: Nếu các mức phí có thời gian giao hàng bằng nhau, hệ thống sẽ ưu tiên chọn mức phí có giá tiền cao hơn.
+- **Shortest shipping time (Thời gian giao hàng ngắn nhất)**: Chọn mức phí có thời gian giao hàng (`shipping_time_to`) ngắn nhất (chỉ áp dụng đối với các mức phí có cấu hình thời gian giao hàng hợp lệ).
+  - *Fallback*: Nếu các mức phí có thời gian giao hàng bằng nhau, hệ thống sẽ ưu tiên chọn mức phí có giá tiền cao hơn.
+
+### 3.2. Cấu hình chi tiết cho từng Group (Group Settings Modal)
+Khi có ít nhất một nhóm có từ 2 mức phí trở lên, giao diện quản trị sẽ tự động hiển thị nút **Group settings** ở góc phải của phần *Item based rates*.
+
+![Nút Group settings](images/plugin/ec-advanced-shipping/button-group-setting.png)
+*Hình minh họa: Nút Group settings trên giao diện quản trị*
+
+Khi nhấp vào nút này, một cửa sổ popup sẽ hiện ra, cho phép bạn xem danh sách tất cả các nhóm thỏa mãn điều kiện và tùy chỉnh chiến lược hiển thị riêng biệt cho từng nhóm:
+
+![Cửa sổ thiết lập Group](images/plugin/ec-advanced-shipping/modal-group-setting.png)
+*Hình minh họa: Modal cấu hình Group settings*
 
 ![Cấu hình phân nhóm Group](images/plugin/ec-advanced-shipping/item-base-rate-add-group.png)
 *Hình minh họa: Thiết lập Group cho các mức phí vận chuyển*
