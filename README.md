@@ -14,6 +14,7 @@ Tài liệu hướng dẫn kỹ thuật dành cho việc xây dựng nội dung 
 *   [**Product Advanced Fields**](Product_Advanced_Fields_Guide.md): Hướng dẫn quản lý nhóm trường nâng cao, cấu hình trường dữ liệu tùy chỉnh cho sản phẩm và thiết lập display rule thông minh.
 *   [**EC Advanced Shipping**](EC_Advanced_Shipping_Guide.md): Hướng dẫn sử dụng plugin tính toán phí giao hàng nâng cao theo số lượng sản phẩm, giá trị giỏ hàng cùng hệ thống lọc quy tắc và chiến lược phân nhóm.
 *   [**EC Advanced Coupon**](EC_Advanced_Coupon.md): Hướng dẫn cấu hình điều kiện áp dụng, điều kiện kích hoạt tối thiểu, công khai coupon và chèn hiển thị tự động/shortcode cho mã giảm giá nâng cao.
+*   [**EC Bulk Update**](EC_Bulk_Update_Guide.md): Hướng dẫn cấu hình bộ lọc động, cập nhật hàng loạt thuộc tính sản phẩm/biến thể và kiểm soát tiến trình chạy ngầm.
 *   [**Ads Pixel Manager**](Ads_Pixel_Manager_Guide.md): Hướng dẫn cài đặt Conversion Tracking (Google Ads, Bing Ads, Facebook Pixel + CAPI), cấu hình Region Consent Mode (GDPR) và popup đồng ý cho WooCommerce lẫn cửa hàng Shopbase.
 *   [**Auto Fill Address (API Key)**](Supplementary_Plugins_Guide.md): Hướng dẫn cấu hình và tích hợp API Key cho tính năng tự động điền địa chỉ thông minh ngoài trang thanh toán.
 *   [**Wordfence Security**](Wordfence_Security_Guide.md): Hướng dẫn cấu hình bảo mật chống brute force, rà quét mã độc (Malware Scanner) và tối ưu hóa hiệu suất tường lửa (WAF) cho website WooCommerce.
