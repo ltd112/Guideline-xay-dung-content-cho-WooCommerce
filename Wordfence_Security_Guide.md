@@ -1,7 +1,7 @@
 # Hướng Dẫn Cấu Hình Bảo Mật Với Plugin Wordfence Security
 
 > [!IMPORTANT]
-> **Wordfence Security** là plugin bảo mật hàng đầu dành cho WordPress, cung cấp hệ thống tường lửa (Firewall) bảo vệ toàn diện, trình quét mã độc (Malware Scanner), cơ chế chống brute force đăng nhập và các tính năng giám sát lưu lượng thời gian thực. Đối với một website WooCommerce, việc thiết lập Wordfence đúng cách giúp bảo vệ thông tin khách hàng và ngăn chặn các cuộc tấn công phá hoại mà không làm ảnh hưởng đến tốc độ load trang của người mua.
+> **Wordfence Security** là plugin hỗ trợ bảo mật cho WordPress, cung cấp hệ thống tường lửa (Firewall), trình quét mã độc (Malware Scanner), cơ chế chống đăng nhập brute force và tính năng giám sát lưu lượng thời gian thực. Đối với website WooCommerce, việc thiết lập Wordfence đúng cách giúp bảo vệ thông tin khách hàng và ngăn chặn các cuộc tấn công mà không ảnh hưởng đến tốc độ tải trang.
 
 ---
 
@@ -18,8 +18,8 @@
 ## 1. Giới thiệu & Cài đặt ban đầu
 - **Cài đặt**: Vào **Plugins -> Add New**, tìm kiếm từ khóa `Wordfence Security` và tiến hành cài đặt, kích hoạt.
 - **Kích hoạt Giấy phép (License Key)**: 
-  1. Sau khi kích hoạt, Wordfence yêu cầu bạn đăng ký một License Key (Có thể chọn gói **Free** - miễn phí).
-  2. Điền email quản trị của bạn để nhận các thông báo cảnh báo bảo mật khẩn cấp từ hệ thống.
+  1. Sau khi kích hoạt, hệ thống yêu cầu đăng ký một License Key (Có thể chọn gói **Free** - miễn phí).
+  2. Điền email quản trị để nhận các thông báo cảnh báo bảo mật khẩn cấp từ hệ thống.
   3. Hoàn tất kích hoạt key được gửi qua email.
 
 ---
@@ -29,7 +29,7 @@ Tường lửa của Wordfence ngăn chặn các truy cập độc hại trướ
 
 ### 2.1. Tối ưu hóa Tường lửa (Optimize Wordfence Firewall)
 > [!IMPORTANT]
-> Ngay sau khi cài đặt, bạn sẽ thấy thông báo yêu cầu **Optimize the Wordfence Firewall**. Đây là bước cực kỳ quan trọng để tường lửa chạy ở mức độ hệ thống (`Extended Protection`), bảo vệ web trước cả khi PHP của WordPress được load lên.
+> Ngay sau khi cài đặt, hệ thống sẽ hiển thị yêu cầu **Optimize the Wordfence Firewall**. Đây là bước quan trọng để tường lửa chạy ở mức độ hệ thống (`Extended Protection`), hỗ trợ bảo vệ website trước khi PHP của WordPress được tải.
 - **Thực hiện**:
   1. Nhấp vào nút **Click here to configure** trên bảng thông báo.
   2. Tải xuống file sao lưu cấu hình hệ thống `.htaccess` (hoặc `nginx.conf`) theo hướng dẫn.
@@ -38,7 +38,7 @@ Tường lửa của Wordfence ngăn chặn các truy cập độc hại trướ
 ### 2.2. Chế độ Hoạt động (Firewall Status)
 Vào **Wordfence -> Firewall**:
 - **Learning Mode (Chế độ học học)**: Khi mới cài đặt, Wordfence mặc định chạy ở chế độ này trong vòng 1 tuần. Hệ thống sẽ theo dõi các hành vi bình thường của khách hàng và admin để tránh chặn nhầm (False Positives).
-- **Enabled and Protecting (Bật bảo vệ)**: Sau 1 tuần, tường lửa sẽ tự chuyển sang chế độ này. Bạn có thể chủ động chuyển thủ công sang trạng thái này ngay nếu tự tin website không sử dụng các API tùy biến lạ.
+- **Enabled and Protecting (Bật bảo vệ)**: Sau 1 tuần, tường lửa sẽ tự động chuyển sang chế độ này. Có thể chủ động chuyển thủ công sang trạng thái này nếu hệ thống không sử dụng các API tùy biến khác.
 
 ### 2.3. Cấu hình Giới hạn Tần suất & Chặn Nâng cao (Rate Limiting and Advanced Blocking)
 Giúp bảo vệ website WooCommerce khỏi các cuộc tấn công DDoS, spam, bots rác quét lỗ hổng bảo mật (Vulnerability Scanning) nhưng vẫn đảm bảo các công cụ tìm kiếm lớn (như Googlebot) và khách hàng thực tế không bị chặn nhầm.
@@ -71,7 +71,7 @@ Giúp quét toàn bộ mã nguồn của website để phát hiện các tệp t
 * **Khuyến nghị thiết lập quét (Scan Options)**:
   * Vào **Scan -> Scan Options and Scheduling**.
   * Chọn chế độ quét: **Standard Scan** (Khuyến nghị cho gói Free vì cân bằng rất tốt giữa hiệu suất server và độ sâu quét dữ liệu).
-  * Bật tùy chọn: `Scan theme files against repository versions for changes` và `Scan plugin files against repository versions for changes`. Tính năng này sẽ so sánh trực tiếp file code theme/plugin trên web của bạn với bản gốc trên kho lưu trữ WordPress để phát hiện chỉnh sửa lạ.
+  * Bật tùy chọn: `Scan theme files against repository versions for changes` và `Scan plugin files against repository versions for changes`. Tính năng này sẽ so sánh trực tiếp file code theme/plugin trên website với bản gốc trên kho lưu trữ WordPress để phát hiện các chỉnh sửa bất thường.
 * **Xử lý tệp bị nhiễm**:
   * Khi phát hiện file lõi của WordPress bị thay đổi, Wordfence cung cấp nút **View Differences** để so sánh dòng code bị sửa và nút **Restore Original** để khôi phục nhanh file sạch gốc từ WordPress.org.
   * Đối với mã độc không xác định trong thư mục upload, sử dụng tùy chọn **Delete** để xóa bỏ sau khi đã sao lưu (Backup) kỹ hệ thống.
@@ -111,7 +111,7 @@ Mã độc thường không thể tự thực thi trong thư mục hình ảnh c
 - Nhập đường dẫn loại trừ: `wp-content/uploads/*` để bỏ qua việc quét tệp ảnh thông thường.
 
 ### 5.2. Tối ưu dung lượng lưu trữ cơ sở dữ liệu (Database Size)
-Tính năng **Live Traffic** lưu nhật ký mọi lượt truy cập của bots và người dùng vào database, điều này khiến database phình to cực kỳ nhanh trên các site WooCommerce có lượt truy cập lớn.
+Tính năng **Live Traffic** lưu nhật ký mọi lượt truy cập của bots và người dùng vào cơ sở dữ liệu, điều này khiến dung lượng cơ sở dữ liệu tăng nhanh trên các website WooCommerce có lưu lượng truy cập lớn.
 * **Tối ưu hóa**:
   * Vào **Wordfence -> Firewall -> All Firewall Options**.
   * Cuộn xuống mục **Live Traffic Options**.

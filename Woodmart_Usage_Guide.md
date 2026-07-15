@@ -40,7 +40,7 @@ Sử dụng Elementor phối hợp với các Widget đặc thù của Woodmart 
 ---
 
 ## 3. Quản lý Header (Header Builder)
-Woodmart cung cấp trình xây dựng Header mạnh mẽ với cơ chế kéo thả trực quan.
+Woodmart cung cấp trình xây dựng Header với cơ chế kéo thả trực quan.
 
 - **Truy cập**: Dashboard -> **Woodmart** -> **Header Builder**.
 - **Tính năng chủ chốt**: 
@@ -66,13 +66,13 @@ Truy cập plugin thông qua **Settings -> WC Enhancement Kit**.
 - **Smart Default Variant**: Tự động **kích hoạt biến thể đầu tiên** khi tải trang.
 - **Swatch Styling**: Cấu hình **CSS** (Background/Text Color) cho trạng thái **Selected** tại phần Swatch Settings.
     <div align="center" >
-        <img src="images/plugin/wc-enhancement-kit/plugin_variant_display.png" alt="Cấu hình hiển thị biến thể trong Woodmart" ></img>
+        <img src="images/plugin/weck/plugin_variant_display.png" alt="Cấu hình hiển thị biến thể trong Woodmart" ></img>
     </div>
     
 ---
 
 ## 5. Cấu hình Swatches cho Thuộc tính (Attributes - Gốc của Woodmart)
-Để thay thế danh sách thả xuống mặc định ngoài frontend bằng các ô chọn màu sắc hoặc kiểu dáng (Swatches) trực quan bằng tính năng gốc cực kỳ mạnh mẽ của Woodmart, hãy thực hiện theo quy trình sau:
+Để thay thế danh sách thả xuống mặc định ở frontend bằng các ô chọn trực quan (Swatches) bằng tính năng mặc định của Woodmart, thực hiện theo quy trình sau:
 
 ### 5.1. Cấu hình cấp Thuộc tính (Global Settings)
 - **Truy cập**: Dashboard -> **Products** -> **Attributes**.
