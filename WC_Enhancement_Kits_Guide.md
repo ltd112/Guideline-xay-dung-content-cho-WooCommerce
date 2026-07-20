@@ -17,7 +17,7 @@
 8. [**Công cụ Admin & Bảo mật (Admin Tool)**](#8-công-cụ-admin--bảo-mật-admin-tool) - Chặn Brute Force, tinh chỉnh bảng quản trị, xóa nhanh chống timeout và bảo trì sửa lỗi cơ sở dữ liệu.
 9. [**Product Importer**](#9-trình-nhập-liệu-sản-phẩm-product-importer) - Hỗ trợ nhập CSV từ Shopbase/WooCommerce với cơ chế tự phục hồi.
 10. [**Trình dán ảnh (Image Attacher)**](#10-trình-dán-ảnh-image-attacher) - Tải ảnh hàng loạt thông qua liên kết từ xa không lưu trữ.
-11. [**Tối ưu hình ảnh WebP (WebP Conversion)**](#11-tối-ưu-hình-ảnh-webp-webp-conversion) - Tự động chuyển đổi sang WebP khi tải lên và tối ưu hóa hàng loạt.
+11. [**Tối ưu và Phân phối Hình ảnh (Performance & Image Optimization)**](#11-tối-ưu-và-phân-phối-hình-ảnh-performance--image-optimization) - Tự động chuyển đổi sang WebP khi tải lên, tối ưu hàng loạt và phân phối ảnh qua CDN với kích thước tùy biến.
 12. [**Bảng size (Size Charts)**](#12-bảng-size-size-charts) - Quản lý bảng kích thước dạng popup theo sản phẩm, gán động theo Product Type hoặc gán hàng loạt qua Product Tag.
 13. [**Hóa đơn Khách hàng (Customer Invoice)**](#13-hóa-đơn-khách-hàng-customer-invoice) - Cung cấp trang hóa đơn công khai truy cập qua URL bảo mật (không cần đăng nhập) tích hợp trạng thái đơn hàng.
 14. [**Bộ lọc Nâng cao (Product Advanced Filter)**](#14-bộ-lọc-nâng-cao-product-advanced-filter) - Cung cấp sidebar bộ lọc sản phẩm nâng cao kiểu Shopify/ShopBase trên trang danh sách sản phẩm quản trị.
@@ -307,12 +307,14 @@ Cung cấp các thiết lập bảo mật cấp WordPress để hạn chế các
 </div>
 
 * **Vô hiệu hóa XML-RPC (Disable XMLRPC)**: Vô hiệu hóa giao thức XML-RPC để ngăn chặn tấn công dò mật khẩu (Brute Force) và các truy cập trái phép.
+
   * > [!NOTE]
     > Lựa chọn này chỉ vô hiệu hóa XML-RPC ở mức ứng dụng WordPress. Để chặn hoàn toàn truy cập tới tệp `xmlrpc.php`, bạn nên cấu hình thêm ở cấp máy chủ (ví dụ sử dụng tệp `.htaccess` trên Apache hoặc cấu hình block trên Nginx).
     >
 * **Chặn dò tìm Username (Disable REST API User Enumeration)**: Ngăn chặn người dùng ẩn danh liệt kê danh sách tài khoản thành viên/quản trị viên thông qua REST API (endpoint `/wp/v2/users`).
 * **Vô hiệu hóa trang lưu trữ tác giả (Disable Author Archives)**: Tự động chuyển hướng trang lưu trữ cá nhân của tác giả (ví dụ: `/?author=1`) về trang lỗi 404 nhằm tránh việc hacker khai thác dò tìm username của admin.
 * **Chặn đăng nhập bằng mật khẩu (Disable Password Login)**: Chặn hoàn toàn phương thức đăng nhập bằng tên người dùng và mật khẩu thông thường. Cực kỳ hữu ích khi website đã chuyển sang sử dụng đăng nhập qua OTP hoặc tài khoản Google/Mạng xã hội.
+
   * > [!CAUTION]
     > Tuyệt đối **không bật** tùy chọn này nếu bạn chưa cấu hình và thử nghiệm thành công phương thức đăng nhập thay thế (như đăng nhập qua Google), nếu không bạn sẽ bị khóa tài khoản và không thể truy cập trang quản trị.
     >
@@ -380,41 +382,75 @@ Công cụ hỗ trợ tải và đính kèm nhanh hình ảnh vào thư viện M
 
 ---
 
-## 11. Tối ưu hình ảnh WebP (WebP Conversion)
+## 11. Tối ưu và Phân phối Hình ảnh (Performance & Image Optimization)
 
-Hệ thống tích hợp module WebP Conversion để tự động chuyển đổi, thu nhỏ kích thước và tối ưu hóa dung lượng hình ảnh hỗ trợ cải thiện điểm số hiệu năng trên Google PageSpeed Insights.
+Hệ thống tích hợp hai module con là **WebP Conversion** (tự động chuyển đổi định dạng và tối ưu dung lượng hình ảnh) và **CDN Image Optimizer** (phân phối hình ảnh thông qua CDN và tự động sinh kích thước hiển thị tối ưu) để cải thiện điểm số hiệu năng trên Google PageSpeed Insights và giảm tải băng thông cho máy chủ.
 
-* **Đường dẫn**: Dashboard -> **Enhancement Kit** -> **WebP Conversion** (Legacy: Dashboard -> **Settings** -> **WC Enhancement Kit** -> **WebP Conversion**).
+### 11.1. Tối ưu hình ảnh WebP (WebP Conversion)
+
+Module WebP Conversion giúp tự động chuyển đổi định dạng ảnh tải lên thành `.webp` và hỗ trợ nén hàng loạt tài nguyên cũ.
+
+* **Đường dẫn**: Dashboard -> **Enhancement Kit** -> **WebP Conversion**
 
 <div align="center">
-    <img src="images/plugin/weck/plugin_convert_image_to_webp.png" alt="Giao diện WebP Conversion" />
+    <img src="images/plugin/weck/image-optimize/weck-webp-convert-setting.png" alt="Cấu hình WebP Conversion" />
 </div>
 
-### 11.1. Cấu hình chi tiết (WebP Settings)
+#### A. Cấu hình chi tiết (WebP Settings)
 
-* **Enable WebP Upload Conversion**: Hộp chọn (Checkbox) cho phép bật hoặc tắt tính năng tự động chuyển đổi định dạng ảnh sang WebP ngay khi upload.
-* **WebP Quality (Chất lượng ảnh WebP)**: Trường nhập số quy định chất lượng nén của hình ảnh sau khi chuyển đổi:
-  * **Giá trị nhỏ nhất (Min)**: `60`
-  * **Giá trị lớn nhất (Max)**: `100`
-  * **Giá trị mặc định (Default)**: `85` (Cân bằng giữa dung lượng tối ưu và chất lượng hình ảnh).
+* **Enable WebP Upload Conversion**: Bật/tắt tính năng tự động chuyển đổi định dạng ảnh sang WebP ngay khi upload lên thư viện.
+* **WebP Quality (Chất lượng ảnh WebP)**: Điều chỉnh chất lượng nén ảnh sau khi chuyển đổi (giới hạn từ `60` đến `100`, mặc định là `85` - mức tối ưu cân bằng giữa chất lượng hiển thị và dung lượng).
 * **Resize on Upload & Maximum Dimensions (Giới hạn kích thước ảnh)**:
-  * Tự động thay đổi kích thước (Resize) của hình ảnh quá khổ khi tải lên để tránh lãng phí tài nguyên máy chủ.
-  * **Giá trị mặc định (Default)**: `2000` px.
-  * **Giá trị nhỏ nhất (Min)**: `100` px.
-  * Nếu ảnh tải lên có chiều rộng hoặc chiều cao vượt quá giới hạn cấu hình này, hệ thống sẽ tự động thu nhỏ (Scale) về đúng kích thước giới hạn tối đa trước khi thực hiện chuyển đổi WebP.
+  * Tự động thay đổi kích thước của hình ảnh quá khổ khi tải lên để tránh lãng phí dung lượng máy chủ.
+  * **Giá trị mặc định**: `2000` px (giới hạn tối thiểu `100` px). Nếu ảnh tải lên có chiều rộng hoặc chiều cao vượt quá giới hạn này, hệ thống sẽ tự động co nhỏ về đúng kích thước giới hạn tối đa trước khi chuyển đổi WebP.
 
-### 11.2. Chuyển đổi Hàng loạt (Bulk Migration)
+#### B. Chuyển đổi Hàng loạt (Bulk Migration)
 
-* **Mục đích**: Chuyển đổi toàn bộ tài nguyên hình ảnh cũ đã tải lên website từ trước khi cài đặt plugin sang định dạng WebP.
-* **Cách thực hiện**: Click vào nút hành động **Start Bulk Migration** (hoặc **Bulk Migration**).
-* **Cơ chế hoạt động**:
-  * **Xử lý phân mảng (Batch processing)**: Để tránh quá tải CPU/RAM của server, hệ thống tự động chia nhỏ tiến trình chạy ngầm thành từng đợt, xử lý **20 ảnh cho 1 lần** (batch 20 images).
-  * **Cơ chế tự sửa lỗi & Thử lại (Retry)**: Trong trường hợp quá trình xử lý gặp sự cố kết nối hoặc lỗi máy chủ cục bộ đối với một số hình ảnh nhất định, hệ thống tự động kích hoạt **cơ chế thử lại tối đa 3 lần** (retry 3 times) cho mỗi ảnh trước khi đánh dấu lỗi, đảm bảo tỷ lệ hoàn thành mà không cần thao tác thủ công.
+* **Mục đích**: Quét và chuyển đổi toàn bộ thư viện hình ảnh cũ đã tải lên website từ trước khi cài đặt plugin sang định dạng WebP.
+* **Cách thực hiện**: Nhấp vào nút **Start Bulk Migration**. Tiến trình sẽ tự động chạy ngầm theo từng lô (Batch) xử lý **20 ảnh/lượt** để tránh làm nghẽn máy chủ.
+* **Cơ chế tự phục hồi**: Nếu có sự cố kết nối hoặc lỗi cục bộ, hệ thống sẽ tự động thử lại tối đa 3 lần cho mỗi ảnh trước khi ghi nhận lỗi.
 
-### 11.3. Cơ chế tự động dọn dẹp khi Xóa ảnh (Image Deletion)
+<div align="center">
+    <img src="images/plugin/weck/image-optimize/weck-webp-convert-bulk-migration.png" alt="Tiến trình Bulk Migration WebP" />
+</div>
 
-* Khi người dùng thực hiện xóa một tệp ảnh bất kỳ trong thư viện **Media Library**:
-  * Hệ thống sẽ **tự động xóa sạch đồng thời cả phiên bản ảnh tối ưu dạng `.webp` lẫn tệp ảnh gốc ban đầu**
+#### C. Cơ chế tự động dọn dẹp khi Xóa ảnh (Image Deletion)
+
+* Khi người dùng thực hiện xóa một tệp ảnh bất kỳ trong thư viện **Media Library**: Hệ thống sẽ tự động xóa sạch đồng thời cả phiên bản ảnh tối ưu dạng `.webp` lẫn tệp ảnh gốc ban đầu.
+
+---
+
+### 11.2. Phân phối ảnh qua CDN (CDN Image Optimizer)
+
+Module CDN Image Optimizer hỗ trợ viết lại liên kết hình ảnh sang tên miền CDN và tự động phân phối kích thước ảnh hiển thị phù hợp cho từng thiết bị (Responsive Images qua thuộc tính `srcset` và `sizes`).
+
+* **Đường dẫn**: Dashboard -> **Enhancement Kit** -> **CDN Image Optimizer**
+
+<div align="center">
+    <img src="images/plugin/weck/image-optimize/weck-webp-cdn-setting.png" alt="Cấu hình CDN Image Optimizer" />
+</div>
+
+#### A. Cấu hình Chung (CDN Settings)
+
+* **Enable CDN Image Optimizer**: Bật/tắt tính năng viết lại URL hình ảnh qua CDN.
+* **CDN Domains**: Danh sách các tên miền CDN sẽ sử dụng để phân phối ảnh (mỗi dòng một tên miền, ví dụ: `img.btdmp.com`, `img.thesitebase.net`).
+* **Srcset Widths**: Danh sách các kích thước chiều rộng ảnh (tính bằng px) sẽ được tự động tạo trong thuộc tính `srcset` để hỗ trợ hiển thị responsive tốt nhất trên các thiết bị. Mặc định bao gồm: `96, 128, 256, 320, 384, 512, 640, 750, 828, 1080, 1200, 1536, 1920, 2048`.
+* **Version Path Mode**: Chế độ thiết lập đường dẫn phiên bản ảnh để tối ưu bộ nhớ đệm CDN:
+  * `ver_1`: Sử dụng tham số phiên bản dạng tĩnh hoặc URL chuẩn thông thường.
+  * `ver_size`: Tích hợp trực tiếp kích thước ảnh vào cấu trúc đường dẫn để tối ưu hóa bộ nhớ đệm CDN chuyên sâu.
+
+#### B. Cấu hình Kích thước Hiển thị (Sizes Settings)
+
+Giúp tinh chỉnh chính xác thuộc tính `sizes` trong mã HTML của ảnh đối với từng vị trí hiển thị khác nhau để trình duyệt tải về kích thước ảnh nhẹ nhất, phù hợp nhất với thiết bị của người dùng:
+
+<div align="center">
+    <img src="images/plugin/weck/image-optimize/weck-webp-cdn-image-size-setting.png" alt="Cấu hình Sizes Settings" />
+</div>
+
+* **Product List Sizes**: Định dạng hiển thị ảnh trên trang danh sách sản phẩm (Shop/Archive). Mặc định: `(max-width: 767px) 100vw, 25vw` (Mobile chiếm toàn màn hình, Desktop chiếm 1/4 độ rộng màn hình).
+* **Single Product Sizes**: Định dạng hiển thị ảnh trên trang chi tiết sản phẩm. Mặc định: `(max-width: 767px) 100vw, 750px` (Mobile chiếm toàn màn hình, Desktop giới hạn tối đa 750px).
+* **Thumbnail Sizes**: Định dạng ảnh thu nhỏ (Thumbnail). Mặc định: `(max-width: 767px) 100vw, 320px`.
+* **FBT (Frequently Bought Together) Sizes**: Định dạng ảnh của mục mua kèm thường gặp. Mặc định: `(max-width: 767px) 100vw, 320px`.
 
 ---
 
@@ -578,13 +614,7 @@ Các tùy chọn cấu hình bao gồm:
   * *Lưu ý*: Nếu sản phẩm chứa nhiều hơn một thuộc tính nằm trong danh sách được chọn này, hệ thống sẽ ưu tiên hiển thị liên kết bảng size theo thuộc tính kích thước `Size (pa_size)`. Trường hợp sản phẩm không chứa thuộc tính `pa_size` thì sẽ hiển thị tại thuộc tính đầu tiên khớp trong danh sách mà sản phẩm có.
   * **Cơ chế hiển thị trên giao diện (Frontend Display)**:
     * **Cách 1 - Hiển thị phía trên Label của thuộc tính size**: Áp dụng khi sản phẩm có chứa thuộc tính nằm trong danh sách Size Attributes được cấu hình hoặc mặc định.
-      <div align="center">
-          <img src="images/plugin/weck/size-charts/size-chart-show-ín-size.png" alt="Hiển thị Size Guide phía trên label thuộc tính" />
-      </div>
     * **Cách 2 - Hiển thị tại Hook trước khối giỏ hàng**: Áp dụng khi sản phẩm không có thuộc tính kích thước nào thuộc danh sách trên. Liên kết tự động hiển thị tại hook `woocommerce_before_add_to_cart_form` (phía trước khối chọn số lượng và nút Add to Cart).
-      <div align="center">
-          <img src="images/plugin/weck/size-charts/size-chart-show-before-add-to-cart.png" alt="Hiển thị Size Guide tại hook trước nút Add to Cart" />
-      </div>
 
 <div align="center">
     <img src="images/plugin/weck/size-charts/setting-size-chart.png" alt="Giao diện cấu hình cài đặt chung Size Charts" />
